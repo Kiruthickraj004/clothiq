@@ -1,0 +1,74 @@
+/*
+Theme Name: Clothing E-Commerce
+Theme URI: http://example.com/
+Author: KiruthickRaj
+Author URI: http://example.com/
+Description: Custom clothing store theme built on Bootstrap and WooCommerce.
+Version: 1.0
+License: GNU General Public License v2 or later
+Text Domain: clothing-ecommerce
+*/
+/* === WooCommerce Essence Styling === */
+.single-product-wrapper {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+.product-img img {
+    width: 100%;
+    transition: opacity 0.3s ease;
+}
+.product-img .hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.single-product-wrapper:hover .hover-img {
+    opacity: 1;
+}
+.single-product-wrapper:hover .primary-img {
+    opacity: 0;
+}
+.product-description {
+    padding-top: 15px;
+}
+.product-description h6 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0 5px;
+}
+.product-price {
+    color: #ff084e;
+    font-weight: 600;
+}
+.product-favourite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.product-favourite .favme {
+    color: #ff084e;
+    font-size: 16px;
+}
+.hover-content {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+.single-product-wrapper:hover .hover-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* make sure price filter wrapper and slider are visible */
+.widget.price,
+.widget.price .price_slider,
+.widget.price .price_slider_amount {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.simple-price-filter input[type="number"] { box-sizing: border-box; }
+

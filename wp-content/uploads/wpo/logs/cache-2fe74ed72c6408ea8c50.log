@@ -1,0 +1,24 @@
+[2025-11-07 06:46:45 : INFO] - Pruning the Cache log file 
+[2025-11-07 07:25:45 : INFO] - Full Cache Purge triggered by action: after_switch_theme 
+[2025-11-07 07:25:46 : INFO] - Full Cache Purge triggered by action: after_switch_theme 
+[2025-11-07 07:25:46 : INFO] - Full Cache Purge triggered by action: after_switch_theme 
+[2025-11-07 07:25:59 : INFO] - Full Cache Purge triggered by action: after_switch_theme 
+[2025-11-07 09:14:02 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-11-11 06:35:08 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-11-11 06:36:02 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-11-11 06:36:02 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/product/test-1/ has been purged, triggered by action: save_post 
+[2025-11-11 06:36:02 : INFO] - Cache for archive page associated with post_type: product and Title: "test-1" has been purged, triggered by action: save_post 
+[2025-11-11 10:08:08 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-11-11 10:08:08 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-11-11 10:08:08 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-11-11 10:08:08 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/product/test-1/ has been purged, triggered by action: save_post 
+[2025-11-11 10:08:08 : INFO] - Cache for archive page associated with post_type: product and Title: "test-1" has been purged, triggered by action: save_post 
+[2025-11-12 08:29:43 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-11-12 08:34:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-11-12 08:34:27 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?product=test has been purged, triggered by action: woocommerce_product_set_stock 
+[2025-11-12 08:34:27 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?product=test has been purged, triggered by action: save_post 
+[2025-11-12 08:34:27 : INFO] - Cache for archive page associated with post_type: product and Title: "test" has been purged, triggered by action: save_post 
+[2025-11-12 09:09:49 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-11-12 09:09:49 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?product=test-1 has been purged, triggered by action: woocommerce_product_set_stock 
+[2025-11-12 09:09:49 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?product=test-1 has been purged, triggered by action: save_post 
+[2025-11-12 09:09:49 : INFO] - Cache for archive page associated with post_type: product and Title: "test-1" has been purged, triggered by action: save_post 

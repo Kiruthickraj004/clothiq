@@ -1,0 +1,27 @@
+# WordPress Core
+wp-admin/
+wp-includes/
+
+# Sensitive files
+wp-config.php
+# Optionally, if you have a local dev config
+wp-config-local.php
+
+# wp-content exclusions
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+
+# Third-party plugins and themes (if not custom)
+wp-content/plugins/*
+!wp-content/plugins/your-custom-plugin/ # Whitelist your custom plugins
+wp-content/themes/*
+!wp-content/themes/your-custom-theme/ # Whitelist your custom themes
+
+# Local development files
+.DS_Store
+.env
+.idea/
+node_modules/
+npm-debug.log
