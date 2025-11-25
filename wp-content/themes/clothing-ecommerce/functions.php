@@ -76,3 +76,12 @@ add_action( 'wp_enqueue_scripts', function() {
     }
 }, 20 );
 require_once get_template_directory() . '/inc/cart-modal.php';
+
+// Redirect to checkout when "Buy Now" is used
+add_filter( 'woocommerce_add_to_cart_redirect', 'tch_buy_now_redirect_to_checkout' );
+function tch_buy_now_redirect_to_checkout( $url ) {
+    if ( isset( $_REQUEST['buy_now'] ) && (int) $_REQUEST['buy_now'] === 1 ) {
+        return wc_get_checkout_url();
+    }
+    return $url;
+}
