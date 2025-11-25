@@ -1,221 +1,194 @@
 <?php
-/**
- * single-product.php
- * Custom single product template adapted from the Bootstrap "Essence" layout you provided.
- *
- * Place in your theme (preferably child theme) at: /woocommerce/single-product.php
- */
-
+// single-product.php (theme)
 defined( 'ABSPATH' ) || exit;
-
 get_header();
-
-/** @var WC_Product $product */
-global $product;
-if ( ! $product ) {
-    $product = wc_get_product( get_the_ID() );
+global $post, $product;
+if ( empty( $product ) || ! is_object( $product ) || ! ( $product instanceof \WC_Product ) ) {
+    $product = wc_get_product( $post ? $post->ID : 0 );
 }
-
-$breadcrumb_bg = get_template_directory_uri() . '/assets/img/bg-img/breadcumb.jpg';
-?>
-
-<!-- Breadcrumb / Title area (optional) -->
-<div class="breadcumb_area bg-img" style="background-image: url('<?php echo esc_url( $breadcrumb_bg ); ?>');">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center">
-      <div class="col-12">
-        <div class="page-title text-center">
-          <h2><?php echo esc_html( get_the_title() ); ?></h2>
+if ( ! $product || ! ( $product instanceof \WC_Product ) ) {
+    ?>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p><?php esc_html_e( 'Product not found.', 'your-textdomain' ); ?></p>
         </div>
       </div>
     </div>
-  </div>
-</div>
+    <?php
+    get_footer();
+    return;
+}
+$main_id     = $product->get_image_id();
+$gallery_ids = $product->get_gallery_image_ids();
+$slides = array();
 
-<?php
-// Standard WooCommerce notices (cart / checkout messages)
-wc_print_notices();
-?>
-
-<section class="single_product_details_area d-flex align-items-center container" style="padding-top:30px;padding-bottom:40px;">
-  <div class="row w-100">
-
-    <!-- Single Product Thumb -->
-    <div class="col-12 col-md-6 single_product_thumb clearfix">
-      <?php
-      $gallery_ids = $product ? $product->get_gallery_image_ids() : array();
-      $main_image_id = $product ? $product->get_image_id() : 0;
-
-      // Ensure main image is first
-      $slides = array();
-      if ( $main_image_id ) {
-          $slides[] = $main_image_id;
-      }
-      if ( ! empty( $gallery_ids ) ) {
-          foreach ( $gallery_ids as $gid ) {
-              if ( $gid === $main_image_id ) continue;
-              $slides[] = $gid;
-          }
-      }
-
-      if ( empty( $slides ) && $main_image_id ) {
-          $slides[] = $main_image_id;
-      }
-      ?>
-      <div class="product_thumbnail_slides owl-carousel">
-        <?php if ( ! empty( $slides ) ) : ?>
-          <?php foreach ( $slides as $att_id ) : ?>
-            <div class="single-slide">
-              <?php echo wp_get_attachment_image( $att_id, 'large' ); ?>
-            </div>
-          <?php endforeach; ?>
-        <?php else : ?>
-          <div class="single-slide">
-            <?php echo wc_placeholder_img( 'large' ); ?>
-          </div>
-        <?php endif; ?>
-      </div>
-    </div>
-
-    <!-- Single Product Description -->
-    <div class="col-12 col-md-6 single_product_desc clearfix">
-      <?php
-      // Brand (pa_brand) - show first term if available
-      $brands = array();
-      if ( taxonomy_exists( 'pa_brand' ) ) {
-          $brands = wp_get_post_terms( $product->get_id(), 'pa_brand', array( 'fields' => 'names' ) );
-      }
-      if ( ! empty( $brands ) ) {
-          echo '<span class="product-brand">' . esc_html( $brands[0] ) . '</span>';
-      }
-      ?>
-
-      <a href="<?php echo esc_url( get_permalink( $product->get_id() ) ); ?>">
-        <h2><?php echo esc_html( $product->get_name() ); ?></h2>
-      </a>
-
-      <p class="product-price">
-        <?php echo $product ? wp_kses_post( $product->get_price_html() ) : ''; ?>
-      </p>
-
-      <div class="product-desc">
-        <?php
-        // short description
-        $short = apply_filters( 'woocommerce_short_description', get_the_excerpt() );
-        if ( $short ) {
-            echo wp_kses_post( wpautop( $short ) );
-        } else {
-            // fallback to content trimmed
-            echo wp_kses_post( wpautop( wp_trim_words( get_the_content(), 30, '...' ) ) );
-        }
-        ?>
-      </div>
-
-      <!-- Form -->
-      <div class="product-order-wrap mt-4">
-
-        <?php
-        // If product is variable, use default template to handle variation selection & add-to-cart (keeps variation logic)
-        if ( $product && $product->is_type( 'variable' ) ) {
-
-            /**
-             * Render the standard WooCommerce variable add-to-cart template which includes
-             * selects for attributes, price changes and variation add-to-cart handling.
-             * This avoids re-implementing variation handling.
-             */
-            woocommerce_template_single_add_to_cart();
-
-        } else {
-
-            // For simple products we'll render size/color selects (when attributes exist) for UX parity.
-            // Note: for real per-variation pricing/stock you'll want variable products and the above handler.
-
-            // Gather attribute terms (if attribute taxonomies exist)
-            $size_terms  = array();
-            $color_terms = array();
-
-            if ( taxonomy_exists( 'pa_size' ) ) {
-                $size_terms = wp_get_post_terms( $product->get_id(), 'pa_size', array( 'fields' => 'names' ) );
+if ( $main_id ) {
+    $slides[] = $main_id;
+}
+if ( ! empty( $gallery_ids ) ) {
+    foreach ( $gallery_ids as $gid ) {
+        if ( ! $gid ) continue;
+        if ( $main_id && intval( $gid ) === intval( $main_id ) ) continue;
+        $slides[] = $gid;
+    }
+}
+$brand = '';
+if ( taxonomy_exists( 'pa_brand' ) ) {
+    $brand_terms = wp_get_post_terms( $product->get_id(), 'pa_brand' );
+    if ( ! is_wp_error( $brand_terms ) && ! empty( $brand_terms ) ) {
+        $brand = $brand_terms[0]->name;
+    }
+}
+if ( ! $brand ) {
+    $possible = $product->get_attribute( 'brand' );
+    if ( $possible ) $brand = $possible;
+}
+$short_desc = $product->get_short_description();
+if ( ! $short_desc ) {
+    $short_desc = get_the_excerpt( $product->get_id() );
+}
+$attributes = $product->get_attributes();
+$sizes_options = array();
+$colors_options = array();
+foreach ( $attributes as $attr_key => $attr_obj ) {
+    if ( is_a( $attr_obj, 'WC_Product_Attribute' ) ) {
+        $attr_name = $attr_obj->get_name();
+        $label = $attr_obj->get_name();
+        $is_tax = $attr_obj->is_taxonomy();
+        if ( $is_tax ) {
+            $taxonomy = wc_attribute_taxonomy_name( str_replace( 'pa_', '', $attr_name ) );
+            $terms = wp_get_post_terms( $product->get_id(), $attr_name, array( 'fields' => 'names' ) );
+            if ( is_array( $terms ) && ! empty( $terms ) ) {
+                $lower = strtolower( $attr_name );
+                if ( strpos( $lower, 'size' ) !== false ) {
+                    $sizes_options = array_merge( $sizes_options, $terms );
+                } elseif ( strpos( $lower, 'color' ) !== false ) {
+                    $colors_options = array_merge( $colors_options, $terms );
+                }
             }
+        } else {
+            $opts = $attr_obj->get_options();
+            if ( is_array( $opts ) && ! empty( $opts ) ) {
+                $lower = strtolower( $attr_name );
+                if ( strpos( $lower, 'size' ) !== false || strpos( $lower, 'size' ) !== false ) {
+                    $sizes_options = array_merge( $sizes_options, $opts );
+                } elseif ( strpos( $lower, 'color' ) !== false ) {
+                    $colors_options = array_merge( $colors_options, $opts );
+                } else {
+                    $label_lower = strtolower( $attr_obj->get_name() );
+                    if ( strpos( $label_lower, 'size' ) !== false ) {
+                        $sizes_options = array_merge( $sizes_options, $opts );
+                    } elseif ( strpos( $label_lower, 'color' ) !== false ) {
+                        $colors_options = array_merge( $colors_options, $opts );
+                    }
+                }
+            }
+        }
+    } else {
+        $label = is_array( $attr_obj ) && isset( $attr_obj['name'] ) ? $attr_obj['name'] : $attr_key;
+        $value = is_array( $attr_obj ) && isset( $attr_obj['value'] ) ? $attr_obj['value'] : '';
+        if ( $value ) {
+            $opts = array_map( 'trim', explode( '|', $value ) );
+            $lower = strtolower( $label );
+            if ( strpos( $lower, 'size' ) !== false ) {
+                $sizes_options = array_merge( $sizes_options, $opts );
+            } elseif ( strpos( $lower, 'color' ) !== false ) {
+                $colors_options = array_merge( $colors_options, $opts );
+            }
+        }
+    }
+}
+$sizes_options = array_values( array_unique( array_filter( array_map( 'trim', $sizes_options ) ) ) );
+$colors_options = array_values( array_unique( array_filter( array_map( 'trim', $colors_options ) ) ) );
 
-            if ( taxonomy_exists( 'pa_color' ) ) {
-                $color_terms = wp_get_post_terms( $product->get_id(), 'pa_color', array( 'fields' => 'names' ) );
+?>
+<section class="single_product_details_area d-flex align-items-center">
+    <div class="single_product_thumb clearfix">
+        <div class="product_thumbnail_slides owl-carousel">
+            <?php
+            if ( empty( $slides ) ) {
+                echo wc_placeholder_img( 'full' );
+            } else {
+                foreach ( $slides as $att_id ) {
+                    echo wp_get_attachment_image( $att_id, 'full' );
+                }
             }
             ?>
+        </div>
+    </div>
+    <div class="single_product_desc clearfix">
+        <?php if ( $brand ) : ?>
+            <span><?php echo esc_html( $brand ); ?></span>
+        <?php endif; ?>
+        <a href="<?php echo esc_url( get_permalink( $product->get_id() ) ); ?>">
+            <h2><?php echo esc_html( $product->get_name() ); ?></h2>
+        </a>
+        <p class="product-price"><span class="old-price">₹<?php echo wp_kses_post($product->get_regular_price());?></span>₹<?php echo wp_kses_post( $product->get_sale_price() ); ?></p>
+        <?php if ( $short_desc ) : ?>
+            <p class="product-desc"><?php echo wp_kses_post( wpautop( $short_desc ) ); ?></p>
+        <?php endif; ?>
+        <div class="cart-form-wrapper">
+            <?php
+            if ( $product->is_type( 'variable' ) ) {
+                echo '<form class="cart-form clearfix" method="post" enctype="multipart/form-data">';
+                woocommerce_variable_add_to_cart();
+                echo '</form>';
+            } else {
+                ?>
+                <form class="cart-form clearfix" method="post" enctype='multipart/form-data' action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>">
 
-            <form class="cart-form clearfix" method="post" enctype='multipart/form-data'>
-              <div class="select-box d-flex mt-3 mb-3">
-                <?php if ( ! empty( $size_terms ) ) : ?>
-                  <select name="tch_size" id="productSize" class="mr-3 form-control" style="max-width:180px;">
-                    <option value=""><?php esc_html_e( 'Select size', 'yourthemename' ); ?></option>
-                    <?php foreach ( $size_terms as $st ) : ?>
-                      <option value="<?php echo esc_attr( $st ); ?>"><?php echo esc_html( $st ); ?></option>
-                    <?php endforeach; ?>
-                  </select>
-                <?php endif; ?>
+                    <div class="select-box d-flex mt-50 mb-30">
+                        <?php if ( ! empty( $sizes_options ) ) : ?>
+                            <select name="product_size" id="productSize" class="mr-5">
+                                <?php foreach ( $sizes_options as $sopt ) : ?>
+                                    <option value="<?php echo esc_attr( $sopt ); ?>"><?php echo esc_html( $sopt ); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        <?php else : ?>
+                            <select name="product_size" id="productSize" class="mr-5">
+                                <option value="value"><?php esc_html_e( 'Size: XL', 'your-textdomain' ); ?></option>
+                                <option value="value"><?php esc_html_e( 'Size: X', 'your-textdomain' ); ?></option>
+                                <option value="value"><?php esc_html_e( 'Size: M', 'your-textdomain' ); ?></option>
+                                <option value="value"><?php esc_html_e( 'Size: S', 'your-textdomain' ); ?></option>
+                            </select>
+                        <?php endif; ?>
+                        <?php if ( ! empty( $colors_options ) ) : ?>
+                            <select name="product_color" id="productColor">
+                                <?php foreach ( $colors_options as $copt ) : ?>
+                                    <option value="<?php echo esc_attr( $copt ); ?>"><?php echo esc_html( $copt ); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        <?php else : ?>
+                            <select name="product_color" id="productColor">
+                                <option value="value"><?php esc_html_e( 'Color: Black', 'your-textdomain' ); ?></option>
+                                <option value="value"><?php esc_html_e( 'Color: White', 'your-textdomain' ); ?></option>
+                                <option value="value"><?php esc_html_e( 'Color: Red', 'your-textdomain' ); ?></option>
+                                <option value="value"><?php esc_html_e( 'Color: Purple', 'your-textdomain' ); ?></option>
+                            </select>
+                        <?php endif; ?>
+                    </div>
+                    <div class="cart-fav-box d-flex align-items-center">
+                        <?php if ( $product->is_purchasable() && $product->is_in_stock() ) : ?>
+                            <button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="btn essence-btn">
+                                <?php esc_html_e( 'Add to cart', 'your-textdomain' ); ?>
+                            </button>
+                        <?php else : ?>
+                            <p class="stock out-of-stock"><?php esc_html_e( 'Out of stock', 'your-textdomain' ); ?></p>
+                        <?php endif; ?>
+                            
+                        <div class="product-favourite ml-4">
+                            <a href="#" class="favme fa fa-heart"></a>
+                        </div>
+                    </div>
 
-                <?php if ( ! empty( $color_terms ) ) : ?>
-                  <select name="tch_color" id="productColor" class="form-control" style="max-width:180px;">
-                    <option value=""><?php esc_html_e( 'Select color', 'yourthemename' ); ?></option>
-                    <?php foreach ( $color_terms as $ct ) : ?>
-                      <option value="<?php echo esc_attr( $ct ); ?>"><?php echo esc_html( $ct ); ?></option>
-                    <?php endforeach; ?>
-                  </select>
-                <?php endif; ?>
-              </div>
-
-              <div class="cart-fav-box d-flex align-items-center">
-                <?php if ( $product && $product->is_purchasable() && $product->is_in_stock() ) : ?>
-                  <button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="btn essence-btn">
-                    <?php echo esc_html__( 'Add to cart', 'yourthemename' ); ?>
-                  </button>
-                <?php else : ?>
-                  <button type="button" class="btn btn-secondary" disabled><?php echo esc_html__( 'Unavailable', 'yourthemename' ); ?></button>
-                <?php endif; ?>
-
-                <div class="product-favourite ml-4">
-                  <a href="#" class="favme fa fa-heart" aria-hidden="true"></a>
-                </div>
-              </div>
-            </form>
-
-        <?php } // end simple product else ?>
-
-      </div><!-- .product-order-wrap -->
-
-      <?php
-      /**
-       * Extra hooks: payment icons, meta, sharing etc. You can extend here.
-       * do_action( 'woocommerce_single_product_summary' ) is intentionally not used fully so we keep the exact layout.
-       */
-      ?>
-
-    </div><!-- .single_product_desc -->
-
-  </div><!-- .row -->
+                </form>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
 </section>
 
 <?php
 get_footer();
-?>
-
-<script type="text/javascript">
-(function($){
-  $(function(){
-    // Init owl-carousel if available
-    if ( typeof $.fn.owlCarousel !== 'undefined' ) {
-      $('.product_thumbnail_slides').owlCarousel({
-        items: 1,
-        loop: true,
-        nav: true,
-        dots: true,
-        autoplay: false,
-        navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>']
-      });
-    } else {
-      // fallback: make slides visible (no JS carousel)
-      $('.product_thumbnail_slides .single-slide').css('display','block');
-    }
-  });
-})(jQuery);
-</script>

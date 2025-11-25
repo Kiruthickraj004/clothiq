@@ -9,6 +9,11 @@
 </head>
 <body <?php body_class(); ?>>
 <header class="header_area">
+  <?php
+if ( function_exists( 'tch_render_cart_modal_html' ) ) {
+    echo tch_render_cart_modal_html();
+}
+?>
   <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
     <nav class="classy-navbar" id="essenceNav">
       <a class="nav-brand" href="<?php echo esc_url(home_url('/')); ?>">
@@ -46,7 +51,7 @@
         <a href="<?php echo esc_url(wp_login_url()); ?>"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/core-img/user.svg'); ?>" alt="user"></a>
       </div>
       <div class="cart-area">
-        <a href="<?php echo esc_url(wc_get_cart_url()); ?>" id="essenceCartBtn">
+        <a href="<?php echo esc_url(wc_get_cart_url()); ?>" id="essenceCartBtn" class="essence-cart-contents">
           <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/core-img/bag.svg'); ?>" alt="cart">
           <span class="cart-count"><?php echo WC()->cart ? WC()->cart->get_cart_contents_count() : 0; ?></span>
         </a>
@@ -54,3 +59,20 @@
     </div>
   </div>
 </header>
+
+<?php
+if ( function_exists( 'tch_render_cart_modal_html' ) ) {
+    echo tch_render_cart_modal_html();
+} else {
+    ?>
+    <div class="cart-bg-overlay" style="display:none;"></div>
+    <div class="right-side-cart-area" style="display:none;">
+      <div class="cart-button"></div>
+      <div class="cart-content d-flex">
+        <div class="cart-list"><p><?php esc_html_e( 'Cart not available', 'your-textdomain' ); ?></p></div>
+        <div class="cart-amount-summary"><h2><?php esc_html_e( 'Summary', 'your-textdomain' ); ?></h2></div>
+      </div>
+    </div>
+    <?php
+}
+?>

@@ -72,3 +72,70 @@ Text Domain: clothing-ecommerce
 }
 .simple-price-filter input[type="number"] { box-sizing: border-box; }
 
+/* Cart modal overlay + right panel basics */
+.cart-bg-overlay {
+  position: fixed;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 9998;
+  display: none;
+}
+
+.right-side-cart-area {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 420px; /* adjust to match template */
+  max-width: 100%;
+  background: #fff;
+  z-index: 9999;
+  display: none;
+  overflow-y: auto;
+  box-shadow: -6px 0 20px rgba(0,0,0,0.12);
+}
+
+/* inside layout: left list (dark narrow) and right summary (white) */
+.right-side-cart-area .cart-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.right-side-cart-area .cart-list {
+  width: 45%;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 10px 6px;
+}
+
+.right-side-cart-area .cart-list .single-cart-item {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 12px 10px;
+}
+
+.right-side-cart-area .cart-list .cart-thumb-wrap img {
+  width: 70px;
+  height: auto;
+}
+
+.right-side-cart-area .cart-list .cart-item-desc { padding-left: 10px; }
+
+.right-side-cart-area .cart-amount-summary {
+  width: 55%;
+  padding: 50px 40px;
+  background: #fff;
+  color: #222;
+}
+
+/* hide default anchor close content */
+.tch-cart-close { color: #fff; position: absolute; right: 8px; top: 8px; z-index:10000; }
+
+/* show/hide helper classes */
+.right-side-cart-area.active { display: block; }
+.cart-bg-overlay.active { display: block; }
+
+/* mobile adjustments */
+@media (max-width: 768px) {
+  .right-side-cart-area { width: 100%; }
+  .right-side-cart-area .cart-list { display: none; } /* optional: hide left list mobile */
+}

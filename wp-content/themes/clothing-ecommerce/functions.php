@@ -51,17 +51,12 @@ add_action('woocommerce_before_main_content', function(){
 add_action('woocommerce_after_main_content', function(){
     echo '</main>';
 }, 10);
-
-/**
- * Ensure WooCommerce price slider and CSS are enqueued on shop/product archive pages.
- */
 add_action( 'wp_enqueue_scripts', function() {
     if ( ! function_exists( 'is_woocommerce' ) ) {
         return;
     }
 
     if ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() || is_post_type_archive( 'product' ) ) {
-        // Enqueue WooCommerce styles if the theme hasn't already
         if ( ! wp_style_is( 'woocommerce-layout', 'enqueued' ) ) {
             wp_enqueue_style( 'woocommerce-layout' );
         }
@@ -71,17 +66,13 @@ add_action( 'wp_enqueue_scripts', function() {
         if ( ! wp_style_is( 'woocommerce-general', 'enqueued' ) ) {
             wp_enqueue_style( 'woocommerce-general' );
         }
-
-        // Price slider JS: try to enqueue WooCommerce's handler first.
         if ( wp_script_is( 'wc-price-slider', 'registered' ) ) {
             wp_enqueue_script( 'wc-price-slider' );
         } else {
-            // Fallback: ensure jQuery UI slider is available for basic slider functionality.
             wp_enqueue_script( 'jquery-ui-core' );
             wp_enqueue_script( 'jquery-ui-slider' );
         }
-
-        // Make sure jquery is present
         wp_enqueue_script( 'jquery' );
     }
 }, 20 );
+require_once get_template_directory() . '/inc/cart-modal.php';
