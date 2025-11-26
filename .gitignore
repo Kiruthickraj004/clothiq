@@ -16,7 +16,7 @@ wp-content/backup-db/
 # Third-party plugins and themes (if not custom)
 wp-content/plugins/*
 !wp-content/plugins/your-custom-plugin/ # Whitelist your custom plugins
-wp-content/themes/*
+# wp-content/themes/*
 !wp-content/themes/your-custom-theme/ # Whitelist your custom themes
 
 # Local development files

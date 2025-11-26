@@ -77,7 +77,6 @@ add_action( 'wp_enqueue_scripts', function() {
 }, 20 );
 require_once get_template_directory() . '/inc/cart-modal.php';
 
-// Redirect to checkout when "Buy Now" is used
 add_filter( 'woocommerce_add_to_cart_redirect', 'tch_buy_now_redirect_to_checkout' );
 function tch_buy_now_redirect_to_checkout( $url ) {
     if ( isset( $_REQUEST['buy_now'] ) && (int) $_REQUEST['buy_now'] === 1 ) {
@@ -85,3 +84,9 @@ function tch_buy_now_redirect_to_checkout( $url ) {
     }
     return $url;
 }
+
+add_action( 'wp', function() {
+    remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
+    remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+});
+
