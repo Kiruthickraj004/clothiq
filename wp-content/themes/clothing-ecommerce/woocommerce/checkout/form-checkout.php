@@ -7,6 +7,8 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+error_log( 'DEBUG: form-checkout.php override loaded for theme ' . get_stylesheet() );
+echo "<!-- DEBUG: form-checkout.php override loaded -->\n";
 
 // Get checkout object from WooCommerce
 $checkout = WC()->checkout();
