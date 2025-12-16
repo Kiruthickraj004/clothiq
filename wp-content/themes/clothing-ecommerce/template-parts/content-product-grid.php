@@ -11,8 +11,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 <div class="col-12 col-sm-6 col-lg-4">
   <div class="single-product-wrapper">
-
-    <!-- Product Image -->
     <div class="product-img">
       <a href="<?php the_permalink(); ?>">
         <?php
@@ -34,8 +32,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
         }
         ?>
       </a>
-
-      <!-- Sale Badge -->
       <?php if ( $product->is_on_sale() ) : ?>
         <div class="product-badge offer-badge">
             <span>
@@ -49,8 +45,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             </span>
         </div>
       <?php endif; ?>
-
-      <!-- Wishlist -->
       <div class="product-favourite">
         <?php if ( function_exists( 'yith_wcwl_add_to_wishlist' ) ) : ?>
             <?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
@@ -59,35 +53,23 @@ if ( empty( $product ) || ! $product->is_visible() ) {
         <?php endif; ?>
       </div>
     </div>
-
-    <!-- Product Description -->
     <div class="product-description">
-
-      <!-- Category -->
       <span class="product-brand">
         <?php
         $cats = wc_get_product_category_list( $product->get_id(), ', ', '', '' );
         echo $cats ? wp_strip_all_tags( $cats ) : '';
         ?>
       </span>
-
-      <!-- Title -->
       <a href="<?php the_permalink(); ?>">
         <h6><?php the_title(); ?></h6>
       </a>
-
-      <!-- Price -->
       <p class="product-price">
         <?php echo wp_kses_post( $product->get_price_html() ); ?>
       </p>
-
-      <!-- ✅ BUY NOW BUTTON BELOW PRICE -->
       <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>?add-to-cart=<?php echo esc_attr( $product->get_id() ); ?>"
          class="btn essence-btn buy-now-btn mt-2">
          Buy Now
       </a>
-
-      <!-- Hover content (Add to Cart stays as is ✅) -->
       <div class="hover-content">
         <div class="add-to-cart-btn">
           <?php

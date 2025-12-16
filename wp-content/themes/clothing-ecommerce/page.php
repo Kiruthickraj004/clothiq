@@ -1,5 +1,5 @@
 <?php
-// page.php — minimal page template for clothing-ecommerce theme
+// page.php
 defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
@@ -8,9 +8,7 @@ get_header();
   <?php
   if ( have_posts() ) :
     while ( have_posts() ) : the_post();
-      // Page title (optional)
-      echo '<h1 class="entry-title">' . esc_html( get_the_title() ) . '</h1>';
-      // CRITICAL: prints page content (this runs shortcodes like [woocommerce_checkout])
+      // echo '<h1 class="entry-title">' . esc_html( get_the_title() ) . '</h1>';
       echo '<div class="entry-content">';
       the_content();
       echo '</div>';

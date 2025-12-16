@@ -3,3 +3,53 @@
 [2025-11-27 14:01:49 : INFO] - Cache for author page URL: http://localhost/clothing-ecommerce/?author=1 associated with post_type: page and Title: "Checkout" has been purged, triggered by action: save_post 
 [2025-11-27 14:15:17 : INFO] - Setting changed, purging cache 
 [2025-11-27 14:24:20 : INFO] - Pruning the Cache log file 
+[2025-11-28 06:08:23 : INFO] - Full Cache Purge triggered by: WPO_Page_Cache::handle_purge_single_page_cache 
+[2025-11-28 06:20:30 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?page_id=29 has been purged, triggered by action: wp_trash_post 
+[2025-11-28 06:21:52 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?page_id=31 has been purged, triggered by action: save_post 
+[2025-11-28 06:21:52 : INFO] - Cache for author page URL: http://localhost/clothing-ecommerce/?author=1 associated with post_type: page and Title: "Checkout" has been purged, triggered by action: save_post 
+[2025-11-28 06:22:50 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/ has been purged, triggered by: WPO_Page_Cache::handle_purge_single_page_cache 
+[2025-11-28 06:48:03 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?page_id=9 has been purged, triggered by action: save_post 
+[2025-11-28 06:48:03 : INFO] - Cache for author page URL: http://localhost/clothing-ecommerce/?author=1 associated with post_type: page and Title: "Cart" has been purged, triggered by action: save_post 
+[2025-11-28 06:49:19 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?page_id=9 has been purged, triggered by action: save_post 
+[2025-11-28 06:49:19 : INFO] - Cache for author page URL: http://localhost/clothing-ecommerce/?author=1 associated with post_type: page and Title: "Cart" has been purged, triggered by action: save_post 
+[2025-11-28 06:52:21 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?page_id=9 has been purged, triggered by action: save_post 
+[2025-11-28 06:52:21 : INFO] - Cache for author page URL: http://localhost/clothing-ecommerce/?author=1 associated with post_type: page and Title: "Cart" has been purged, triggered by action: save_post 
+[2025-11-28 06:55:11 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?page_id=9 has been purged, triggered by action: save_post 
+[2025-11-28 06:55:11 : INFO] - Cache for author page URL: http://localhost/clothing-ecommerce/?author=1 associated with post_type: page and Title: "Cart" has been purged, triggered by action: save_post 
+[2025-12-02 05:28:54 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/ has been purged, triggered by: WPO_Page_Cache::handle_purge_single_page_cache 
+[2025-12-02 05:37:15 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/ has been purged, triggered by: WPO_Page_Cache::handle_purge_single_page_cache 
+[2025-12-02 05:50:13 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?page_id=9 has been purged, triggered by action: save_post 
+[2025-12-02 05:50:13 : INFO] - Cache for author page URL: http://localhost/clothing-ecommerce/?author=1 associated with post_type: page and Title: "Cart" has been purged, triggered by action: save_post 
+[2025-12-02 06:24:51 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?page_id=31 has been purged, triggered by action: wp_trash_post 
+[2025-12-02 06:24:59 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-12-02 06:25:02 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-12-02 06:27:59 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-12-02 06:30:33 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?page_id=44 has been purged, triggered by action: save_post 
+[2025-12-02 06:30:33 : INFO] - Cache for author page URL: http://localhost/clothing-ecommerce/?author=1 associated with post_type: page and Title: "Checkout" has been purged, triggered by action: save_post 
+[2025-12-02 06:31:34 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?page_id=44 has been purged, triggered by action: wp_trash_post 
+[2025-12-02 06:32:16 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-12-02 06:34:31 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-12-16 09:02:04 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-12-16 09:02:04 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?product=test-1 has been purged, triggered by action: save_post 
+[2025-12-16 09:02:04 : INFO] - Cache for archive page associated with post_type: product and Title: "test-1" has been purged, triggered by action: save_post 
+[2025-12-16 13:08:28 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-12-16 13:08:28 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?product=test has been purged, triggered by action: save_post 
+[2025-12-16 13:08:28 : INFO] - Cache for archive page associated with post_type: product and Title: "test" has been purged, triggered by action: save_post 
+[2025-12-16 13:10:47 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-12-16 13:10:47 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?product=test has been purged, triggered by action: save_post 
+[2025-12-16 13:10:47 : INFO] - Cache for archive page associated with post_type: product and Title: "test" has been purged, triggered by action: save_post 
+[2025-12-16 13:15:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-12-16 13:15:42 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?product=test has been purged, triggered by action: save_post 
+[2025-12-16 13:15:42 : INFO] - Cache for archive page associated with post_type: product and Title: "test" has been purged, triggered by action: save_post 
+[2025-12-16 13:17:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-12-16 13:17:20 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?product=test-1 has been purged, triggered by action: save_post 
+[2025-12-16 13:17:20 : INFO] - Cache for archive page associated with post_type: product and Title: "test-1" has been purged, triggered by action: save_post 
+[2025-12-16 13:24:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-12-16 13:24:27 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?product=test-1 has been purged, triggered by action: save_post 
+[2025-12-16 13:24:27 : INFO] - Cache for archive page associated with post_type: product and Title: "test-1" has been purged, triggered by action: save_post 
+[2025-12-16 13:31:52 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-12-16 13:31:53 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?product=test-1 has been purged, triggered by action: save_post 
+[2025-12-16 13:31:53 : INFO] - Cache for archive page associated with post_type: product and Title: "test-1" has been purged, triggered by action: save_post 
+[2025-12-16 14:21:47 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-12-16 14:21:47 : INFO] - Cache for URL: http://localhost/clothing-ecommerce/?product=test-1 has been purged, triggered by action: save_post 
+[2025-12-16 14:21:47 : INFO] - Cache for archive page associated with post_type: product and Title: "test-1" has been purged, triggered by action: save_post 

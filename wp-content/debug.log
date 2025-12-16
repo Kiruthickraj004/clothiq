@@ -1,1 +1,351 @@
 [27-Nov-2025 15:11:39 UTC] DEBUG: form-checkout.php override loaded for theme clothing-ecommerce
+[28-Nov-2025 06:04:06 UTC] Automatic updates starting...
+[28-Nov-2025 06:04:08 UTC]   Automatic plugin updates starting...
+[28-Nov-2025 06:04:08 UTC]   Automatic plugin updates complete.
+[28-Nov-2025 06:04:09 UTC] Automatic updates complete.
+[28-Nov-2025 06:17:38 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wpdb.php on line 1988
+[02-Dec-2025 05:02:47 UTC] Automatic updates starting...
+[02-Dec-2025 05:02:48 UTC]   Automatic plugin updates starting...
+[02-Dec-2025 05:02:48 UTC]   Automatic plugin updates complete.
+[02-Dec-2025 05:02:49 UTC] Automatic updates complete.
+[02-Dec-2025 06:25:11 UTC] Cron reschedule event error for hook: action_scheduler_run_queue, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[02-Dec-2025 06:25:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function WC() in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\header.php(15): tch_render_cart_modal_html()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(810): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(745): load_template('C:\\xampp\\htdocs...', true, Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\front-page.php(3): get_header()
+#5 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php on line 19
+[02-Dec-2025 06:25:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function WC() in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\header.php(15): tch_render_cart_modal_html()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(810): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(745): load_template('C:\\xampp\\htdocs...', true, Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\front-page.php(3): get_header()
+#5 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php on line 19
+[02-Dec-2025 06:25:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function WC() in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\header.php(15): tch_render_cart_modal_html()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(810): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(745): load_template('C:\\xampp\\htdocs...', true, Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\front-page.php(3): get_header()
+#5 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php on line 19
+[02-Dec-2025 06:25:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function WC() in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\header.php(15): tch_render_cart_modal_html()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(810): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(745): load_template('C:\\xampp\\htdocs...', true, Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\page.php(4): get_header()
+#5 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php on line 19
+[02-Dec-2025 06:33:06 UTC] Cron reschedule event error for hook: action_scheduler_run_queue, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[16-Dec-2025 08:34:05 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\woocommerce\src\Blocks\BlockTypes\AbstractBlock.php on line 66
+[16-Dec-2025 08:35:00 UTC] Automatic updates starting...
+[16-Dec-2025 08:35:02 UTC]   Automatic plugin updates starting...
+[16-Dec-2025 08:35:03 UTC]   Automatic plugin updates complete.
+[16-Dec-2025 08:35:07 UTC]   Automatic theme updates starting...
+[16-Dec-2025 08:35:07 UTC]   Automatic theme updates complete.
+[16-Dec-2025 08:35:07 UTC] Automatic updates complete.
+[16-Dec-2025 08:35:26 UTC] Cron reschedule event error for hook: wpo_smush_clear_failed_tasks, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"wpo_monthly","args":[],"interval":2592000}
+[16-Dec-2025 08:35:26 UTC] Cron reschedule event error for hook: wp_1_wc_privacy_cleanup_cron, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"wp_1_wc_privacy_cleanup_cron_interval","args":[],"interval":300}
+[16-Dec-2025 08:35:26 UTC] Cron reschedule event error for hook: action_scheduler_run_queue, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[16-Dec-2025 08:35:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function WC() in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\header.php(15): tch_render_cart_modal_html()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(810): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(745): load_template('C:\\xampp\\htdocs...', true, Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\front-page.php(3): get_header()
+#5 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php on line 19
+[16-Dec-2025 08:35:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function WC() in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\header.php(15): tch_render_cart_modal_html()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(810): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(745): load_template('C:\\xampp\\htdocs...', true, Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\front-page.php(3): get_header()
+#5 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php on line 19
+[16-Dec-2025 08:35:28 UTC] WP-Optimize: No caching took place, because the plugin location could not be found
+[16-Dec-2025 08:35:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function WC() in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\header.php(15): tch_render_cart_modal_html()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(810): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(745): load_template('C:\\xampp\\htdocs...', true, Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\front-page.php(3): get_header()
+#5 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php on line 19
+[16-Dec-2025 08:35:29 UTC] WP-Optimize: No caching took place, because the plugin location could not be found
+[16-Dec-2025 08:35:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function WC() in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\header.php(15): tch_render_cart_modal_html()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(810): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(745): load_template('C:\\xampp\\htdocs...', true, Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\front-page.php(3): get_header()
+#5 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php on line 19
+[16-Dec-2025 08:35:30 UTC] WP-Optimize: No caching took place, because the plugin location could not be found
+[16-Dec-2025 08:35:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function WC() in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\header.php(15): tch_render_cart_modal_html()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(810): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template.php(745): load_template('C:\\xampp\\htdocs...', true, Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\front-page.php(3): get_header()
+#5 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php on line 19
+[16-Dec-2025 08:35:48 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 12:53:02 UTC] Automatic updates starting...
+[16-Dec-2025 12:53:03 UTC]   Automatic plugin updates starting...
+[16-Dec-2025 12:53:03 UTC]   Automatic plugin updates complete.
+[16-Dec-2025 12:53:05 UTC]   Automatic theme updates starting...
+[16-Dec-2025 12:53:05 UTC]   Automatic theme updates complete.
+[16-Dec-2025 12:53:05 UTC] Automatic updates complete.
+[16-Dec-2025 14:08:52 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\inc\cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:08:52 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(13): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:08:53 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:09:08 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:09:08 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(22): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:09:08 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:09:14 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:09:14 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(13): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:09:14 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:09:18 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:09:18 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(22): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:09:18 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:10:35 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:10:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(13): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:10:35 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:11:09 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:11:09 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(22): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:11:09 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:11:19 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:11:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(22): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:11:19 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:11:19 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:11:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(13): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:11:19 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:11:23 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:11:23 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(13): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:11:23 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:11:36 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:11:36 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(13): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:11:36 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:11:54 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:11:54 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(13): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:11:54 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:12:09 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:09 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(22): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:09 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:12:11 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:11 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin.php(35): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-admin\edit.php(10): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:11 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:12:19 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(22): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:19 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:12:28 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin.php(35): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-admin\edit.php(10): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:32 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin.php(35): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-admin\edit.php(10): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:53 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:53 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin.php(35): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-admin\edit.php(10): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:53 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:12:57 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(22): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:12:57 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:13:03 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:13:03 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin.php(35): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-admin\index.php(10): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:13:03 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[16-Dec-2025 14:13:18 UTC] PHP Warning:  require_once(C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:13:18 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\clothing-ecommerce/wp-content/themes/clothing-ecommerce/inc/cart-modal.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php:78
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-settings.php(695): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin.php(35): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-admin\index.php(10): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\functions.php on line 78
+[16-Dec-2025 14:13:18 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121

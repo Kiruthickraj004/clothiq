@@ -8,12 +8,15 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header class="header_area">
-  <?php
+
+<?php
+
 if ( function_exists( 'tch_render_cart_modal_html' ) ) {
     echo tch_render_cart_modal_html();
 }
 ?>
+
+<header class="header_area">
   <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
     <nav class="classy-navbar" id="essenceNav">
       <a class="nav-brand" href="<?php echo esc_url(home_url('/')); ?>">
@@ -40,39 +43,43 @@ if ( function_exists( 'tch_render_cart_modal_html' ) ) {
         </div>
       </div>
     </nav>
+
     <div class="header-meta d-flex clearfix justify-content-end">
       <div class="search-area">
         <?php get_search_form(); ?>
       </div>
+
       <div class="favourite-area">
         <a href="#"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/core-img/heart.svg'); ?>" alt="favourites"></a>
       </div>
+
       <div class="user-login-info">
-        <a href="<?php echo esc_url(wp_login_url()); ?>"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/core-img/user.svg'); ?>" alt="user"></a>
+        <?php
+
+        if ( function_exists( 'wc_get_page_permalink' ) && wc_get_page_permalink( 'myaccount' ) ) {
+            $account_url = wc_get_page_permalink( 'myaccount' );
+        } else {
+            $account_url = wp_login_url();
+        }
+        ?>
+        <a href="<?php echo esc_url( $account_url ); ?>">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/core-img/user.svg'); ?>" alt="user">
+        </a>
       </div>
+
       <div class="cart-area">
-        <a href="<?php echo esc_url(wc_get_cart_url()); ?>" id="essenceCartBtn" class="essence-cart-contents">
+        <?php
+        $cart_url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : '#';
+        $count = 0;
+        if ( function_exists( 'WC' ) && WC()->cart ) {
+            $count = WC()->cart->get_cart_contents_count();
+        }
+        ?>
+        <a href="<?php echo esc_url( $cart_url ); ?>" id="essenceCartBtn" class="essence-cart-contents">
           <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/core-img/bag.svg'); ?>" alt="cart">
-          <span class="cart-count"><?php echo WC()->cart ? WC()->cart->get_cart_contents_count() : 0; ?></span>
+          <span class="cart-count"><?php echo intval( $count ); ?></span>
         </a>
       </div>
     </div>
   </div>
 </header>
-
-<?php
-if ( function_exists( 'tch_render_cart_modal_html' ) ) {
-    echo tch_render_cart_modal_html();
-} else {
-    ?>
-    <div class="cart-bg-overlay" style="display:none;"></div>
-    <div class="right-side-cart-area" style="display:none;">
-      <div class="cart-button"></div>
-      <div class="cart-content d-flex">
-        <div class="cart-list"><p><?php esc_html_e( 'Cart not available', 'your-textdomain' ); ?></p></div>
-        <div class="cart-amount-summary"><h2><?php esc_html_e( 'Summary', 'your-textdomain' ); ?></h2></div>
-      </div>
-    </div>
-    <?php
-}
-?>

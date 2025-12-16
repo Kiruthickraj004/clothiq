@@ -88,14 +88,14 @@ wp_enqueue_script( 'jquery-ui-slider' );
       </form>
     </div>
   </div>
-  <div class="widget color mb-50">
+  <!-- <div class="widget color mb-50">
     <p class="widget-title2 mb-30">Color</p>
     <div class="widget-desc">
       <?php
       the_widget( 'WC_Widget_Layered_Nav', array( 'title' => '' ), array( 'widget_id' => 'layered-nav-color' ) );
       ?>
     </div>
-  </div>
+  </div> -->
   <div class="widget brands mb-50">
     <p class="widget-title2 mb-30">Brands</p>
     <div class="widget-desc">
