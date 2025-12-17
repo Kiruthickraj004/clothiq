@@ -1,0 +1,6 @@
+.custom-color-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: center;
+}

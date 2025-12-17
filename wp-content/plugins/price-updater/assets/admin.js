@@ -5,12 +5,12 @@ jQuery(document).ready(function ($) {
         const parentId = $(this).val();
         const $child   = $('#bpu_child_cat');
 
-        $child.html('<option value="">Loading...</option>');
-
         if (!parentId) {
             $child.html('<option value="">Select child</option>');
             return;
         }
+
+        $child.html('<option>Loading...</option>');
 
         $.post(bpuData.ajaxUrl, {
             action: 'bpu_get_child_categories',
@@ -20,4 +20,5 @@ jQuery(document).ready(function ($) {
             $child.html('<option value="">Select child</option>' + response);
         });
     });
+
 });

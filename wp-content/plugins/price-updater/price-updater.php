@@ -1,16 +1,13 @@
 <?php
 /**
  * Plugin Name: Bulk Price Updater
- * Description: Update WooCommerce product prices by parent & child category and size.
- * Version: 1.1.0
+ * Description: Update WooCommerce product prices by category, size and optional color with discount & rounding.
+ * Version: 1.3.0
  * Author: KiruthickRaj
  */
 
 defined( 'ABSPATH' ) || exit;
 
-/* =========================================
- * ADMIN MENU
- * ========================================= */
 add_action( 'admin_menu', function () {
     add_submenu_page(
         'woocommerce',
@@ -22,9 +19,6 @@ add_action( 'admin_menu', function () {
     );
 });
 
-/* =========================================
- * ENQUEUE ADMIN SCRIPT
- * ========================================= */
 add_action( 'admin_enqueue_scripts', function ( $hook ) {
 
     if ( $hook !== 'woocommerce_page_bulk-price-updater' ) {
@@ -35,7 +29,7 @@ add_action( 'admin_enqueue_scripts', function ( $hook ) {
         'bpu-admin-js',
         plugin_dir_url( __FILE__ ) . 'assets/admin.js',
         array( 'jquery' ),
-        '1.1.0',
+        '1.3.0',
         true
     );
 
@@ -45,9 +39,32 @@ add_action( 'admin_enqueue_scripts', function ( $hook ) {
     ));
 });
 
-/* =========================================
- * ADMIN PAGE UI
- * ========================================= */
+function bpu_get_all_used_colors() {
+
+    global $wpdb;
+
+    $rows = $wpdb->get_col(
+        "SELECT meta_value FROM {$wpdb->postmeta} WHERE meta_key = '_custom_colors'"
+    );
+
+    $colors = array();
+
+    foreach ( $rows as $row ) {
+        $data = maybe_unserialize( $row );
+
+        if ( is_array( $data ) ) {
+            foreach ( $data as $color ) {
+                if ( ! empty( $color['name'] ) ) {
+                    $key = strtolower( trim( $color['name'] ) );
+                    $colors[ $key ] = $color['name']; // unique by name
+                }
+            }
+        }
+    }
+
+    return array_values( $colors );
+}
+
 function bpu_render_admin_page() {
 
     $parents = get_terms( array(
@@ -55,6 +72,8 @@ function bpu_render_admin_page() {
         'parent'     => 0,
         'hide_empty' => false,
     ) );
+
+    $colors = bpu_get_all_used_colors();
     ?>
     <div class="wrap">
         <h1>Bulk Price Updater</h1>
@@ -63,6 +82,7 @@ function bpu_render_admin_page() {
             <?php wp_nonce_field( 'bpu_update_prices', 'bpu_nonce' ); ?>
 
             <table class="form-table">
+
                 <tr>
                     <th>Parent Category</th>
                     <td>
@@ -101,7 +121,21 @@ function bpu_render_admin_page() {
                 </tr>
 
                 <tr>
-                    <th>New Price (₹)</th>
+                    <th>Product Color (Optional)</th>
+                    <td>
+                        <select name="product_color">
+                            <option value="">All Colors</option>
+                            <?php foreach ( $colors as $color ) : ?>
+                                <option value="<?php echo esc_attr( $color ); ?>">
+                                    <?php echo esc_html( $color ); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>New Regular Price (₹)</th>
                     <td>
                         <input type="number" name="new_price" step="0.01" required />
                     </td>
@@ -110,9 +144,16 @@ function bpu_render_admin_page() {
                 <tr>
                     <th>Discount Percentage (%)</th>
                     <td>
-                        <input type="number"name="discount_percent"step="0.01"min="0"max="100"placeholder="e.g. 20"required />
+                        <input type="number"
+                               name="discount_percent"
+                               step="0.01"
+                               min="0"
+                               max="100"
+                               placeholder="e.g. 20"
+                               required />
                     </td>
                 </tr>
+
             </table>
 
             <?php submit_button( 'Update Prices' ); ?>
@@ -149,26 +190,38 @@ add_action( 'admin_init', function () {
         return;
     }
 
-    if ( empty( $_POST['product_cat'] ) || empty( $_POST['product_size'] ) || empty( $_POST['new_price'] ) ) {
+    if (
+        empty( $_POST['product_cat'] ) ||
+        empty( $_POST['product_size'] ) ||
+        empty( $_POST['new_price'] ) ||
+        ! isset( $_POST['discount_percent'] )
+    ) {
         return;
     }
 
-    if (
-    empty( $_POST['product_cat'] ) ||
-    empty( $_POST['product_size'] ) ||
-    empty( $_POST['new_price'] ) ||
-    ! isset( $_POST['discount_percent'] )
-    ) {
-    return;
-    }
-
-
     $category = sanitize_text_field( $_POST['product_cat'] );
     $size     = sanitize_text_field( $_POST['product_size'] );
+    $color    = isset( $_POST['product_color'] ) ? sanitize_text_field( $_POST['product_color'] ) : '';
     $price    = floatval( $_POST['new_price'] );
     $discount = floatval( $_POST['discount_percent'] );
 
-    $args = array(
+    $meta_query = array(
+        array(
+            'key'     => '_custom_sizes',
+            'value'   => '"' . $size . '"',
+            'compare' => 'LIKE',
+        ),
+    );
+
+    if ( ! empty( $color ) ) {
+        $meta_query[] = array(
+            'key'     => '_custom_colors',
+            'value'   => $color,
+            'compare' => 'LIKE',
+        );
+    }
+
+    $products = get_posts( array(
         'post_type'      => 'product',
         'posts_per_page' => -1,
         'tax_query'      => array(
@@ -178,16 +231,8 @@ add_action( 'admin_init', function () {
                 'terms'    => $category,
             ),
         ),
-        'meta_query' => array(
-            array(
-                'key'     => '_custom_sizes',
-                'value'   => '"' . $size . '"',
-                'compare' => 'LIKE',
-            ),
-        ),
-    );
-
-    $products = get_posts( $args );
+        'meta_query' => $meta_query,
+    ) );
 
     foreach ( $products as $post ) {
 
@@ -195,10 +240,13 @@ add_action( 'admin_init', function () {
         if ( ! $product ) {
             continue;
         }
+
         $product->set_regular_price( $price );
-        $discount_amount = ( $price * $discount ) / 100;
-        $sale_price      = $price - $discount_amount;
+
+        $sale_price = $price - ( $price * $discount / 100 );
+
         $sale_price = round( $sale_price / 10 ) * 10;
+
         $product->set_sale_price( $sale_price );
         $product->set_price( $sale_price );
 
