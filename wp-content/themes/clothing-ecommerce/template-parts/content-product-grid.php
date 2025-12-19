@@ -66,10 +66,17 @@ if ( empty( $product ) || ! $product->is_visible() ) {
       <p class="product-price">
         <?php echo wp_kses_post( $product->get_price_html() ); ?>
       </p>
-      <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>?add-to-cart=<?php echo esc_attr( $product->get_id() ); ?>"
-         class="btn essence-btn buy-now-btn mt-2">
-         Buy Now
+      <a href="<?php echo esc_url(
+        add_query_arg(
+        'buy_now',
+        $product->get_id(),
+        get_permalink( $product->get_id() )
+          )
+        ); ?>"
+        class="btn essence-btn buy-now-btn mt-2">
+        Buy Now
       </a>
+
       <div class="hover-content">
         <div class="add-to-cart-btn">
           <?php

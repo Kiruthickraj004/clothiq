@@ -143,7 +143,7 @@ if ( is_array( $custom_sizes ) && ! empty( $custom_sizes ) ) {
                         <?php endif; ?>
 
                     </div>
-
+                    <?php do_action( 'custom_product_color_swatches' );?>
                     <div class="cart-fav-box d-flex align-items-center">
 
                         <?php if ( $product->is_purchasable() && $product->is_in_stock() ) : ?>
@@ -157,11 +157,7 @@ if ( is_array( $custom_sizes ) && ! empty( $custom_sizes ) ) {
                             </button>
 
                             <!-- Buy Now -->
-                            <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>?add-to-cart=<?php echo esc_attr( $product->get_id() ); ?>"
-                               class="btn essence-btn ml-2">
-                                <?php esc_html_e( 'Buy Now', 'your-textdomain' ); ?>
-                            </a>
-
+                            <a href="<?php echo esc_url(add_query_arg('buy_now',$product->get_id(),$product->get_permalink())); ?>"class="btn essence-btn ml-2">Buy Now</a>
                         <?php else : ?>
 
                             <p class="stock out-of-stock">
