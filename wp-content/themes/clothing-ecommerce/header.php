@@ -20,7 +20,7 @@ if ( function_exists( 'tch_render_cart_modal_html' ) ) {
   <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
     <nav class="classy-navbar" id="essenceNav">
       <a class="nav-brand" href="<?php echo esc_url(home_url('/')); ?>">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/core-img/logo.png'); ?>" alt="<?php bloginfo('name'); ?>">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/core-img/logo-clothiq.png'); ?>" alt="<?php bloginfo('name'); ?>">
       </a>
       <div class="classy-navbar-toggler">
         <span class="navbarToggler"><span></span><span></span><span></span></span>
