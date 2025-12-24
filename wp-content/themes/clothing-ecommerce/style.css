@@ -5,20 +5,24 @@ Author: KiruthickRaj
 Author URI: http://example.com/
 Description: Custom clothing store theme built on Bootstrap and WooCommerce.
 Version: 1.0
-License: GNU General Public License v2 or later
 Text Domain: clothing-ecommerce
 */
-/* === WooCommerce Essence Styling === */
+.popular-products-grid > div {
+    margin-bottom: 30px;
+}
+
 .single-product-wrapper {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
     margin-bottom: 30px;
 }
+
 .product-img img {
     width: 100%;
     transition: opacity 0.3s ease;
 }
+
 .product-img .hover-img {
     position: absolute;
     top: 0;
@@ -26,51 +30,201 @@ Text Domain: clothing-ecommerce
     opacity: 0;
     transition: opacity 0.3s ease;
 }
+
 .single-product-wrapper:hover .hover-img {
     opacity: 1;
 }
+
 .single-product-wrapper:hover .primary-img {
     opacity: 0;
 }
+
 .product-description {
     padding-top: 15px;
 }
+
 .product-description h6 {
     font-size: 16px;
     font-weight: 500;
     margin: 10px 0 5px;
 }
+
 .product-price {
     color: #ff084e;
     font-weight: 600;
 }
+
 .product-favourite {
     position: absolute;
     top: 10px;
     right: 10px;
 }
+
 .product-favourite .favme {
     color: #ff084e;
     font-size: 16px;
 }
+
 .hover-content {
     opacity: 0;
     transform: translateY(10px);
     transition: all 0.3s ease;
 }
+
 .single-product-wrapper:hover .hover-content {
     opacity: 1;
     transform: translateY(0);
 }
-/* make sure price filter wrapper and slider are visible */
+
+.search-form {
+    position: relative;
+}
+
+.search-form .search-field {
+    width: 180px;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: none;
+}
+
+.search-form .search-field:focus {
+    border-color: #000;
+}
+
 .widget.price,
 .widget.price .price_slider,
 .widget.price .price_slider_amount {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
-.simple-price-filter input[type="number"] { box-sizing: border-box; }
 
+.product-color-swatches {
+    margin-top: 15px;
+}
+
+.product-color-swatches strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.product-color-swatches .swatches {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.modern-product {
+    padding: 80px 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+}
+
+.product-gallery {
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumb-img {
+    width: 70px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.main-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.brand {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.product-info h1 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.short-desc {
+    color: #666;
+    line-height: 1.7;
+}
+
+.product-options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.size-selector select {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #ddd;
+}
+
+.product-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-primary,
+.btn-primary:visited {
+    background: #000 !important;
+    color: #fff !important;
+    padding: 14px 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-outline {
+    border: 2px solid black;
+    padding: 14px 40px;
+    text-decoration: none;
+    color: black;
+}
+
+.product-details {
+    max-width: 900px;
+    margin: 80px auto;
+    line-height: 1.8;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .thumbnail-list {
+        flex-direction: row;
+    }
+
+    .product-gallery {
+        flex-direction: column;
+    }
+}
 
 

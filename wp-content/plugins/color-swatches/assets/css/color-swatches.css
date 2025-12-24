@@ -9,7 +9,8 @@
 
 .product-color-swatches .swatches {
     display: flex;
-    gap: 10px;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .product-color-swatches .swatch {
@@ -23,9 +24,9 @@
 }
 
 .product-color-swatches .swatch:hover {
-    transform: scale(1.1);
+    transform: scale(1.06);
 }
 
 .product-color-swatches .swatch.active {
     border-color: #000;
-}
+} 

@@ -20,14 +20,15 @@ get_template_part('template-parts/cta');
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="popular-products-slides owl-carousel">
+        <div class="row popular-products-grid">
           <?php
           $args = array(
-            'limit' => 8,
+            'limit' => 4,
             'status' => 'publish',
             'orderby' => 'date',
             'order' => 'DESC',
           );
+
           $products = wc_get_products( $args );
 
           if ( ! empty( $products ) ) :
@@ -36,7 +37,12 @@ get_template_part('template-parts/cta');
               $post = get_post( $product->get_id() );
               setup_postdata( $post );
               $GLOBALS['product'] = $product;
-              get_template_part( 'template-parts/content', 'product-card' );
+              ?>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <?php get_template_part( 'template-parts/content', 'product-card' ); ?>
+              </div>
+
+              <?php
             endforeach;
             wp_reset_postdata();
           else:
@@ -44,6 +50,7 @@ get_template_part('template-parts/cta');
           endif;
           ?>
         </div>
+
       </div>
     </div>
   </div>

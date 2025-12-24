@@ -370,3 +370,197 @@ Stack trace:
 [19-Dec-2025 04:55:52 UTC]   Automatic theme updates starting...
 [19-Dec-2025 04:55:52 UTC]   Automatic theme updates complete.
 [19-Dec-2025 04:55:52 UTC] Automatic updates complete.
+[20-Dec-2025 06:08:52 UTC] Automatic updates starting...
+[20-Dec-2025 06:08:58 UTC]   Automatic plugin updates starting...
+[20-Dec-2025 06:08:58 UTC]   Automatic plugin updates complete.
+[20-Dec-2025 06:08:59 UTC]   Automatic theme updates starting...
+[20-Dec-2025 06:08:59 UTC]   Automatic theme updates complete.
+[20-Dec-2025 06:08:59 UTC] Automatic updates complete.
+[20-Dec-2025 06:44:43 UTC] WordPress database error Table 'wp_e_events' already exists for query CREATE TABLE `wp_e_events` (
+			id bigint(20) unsigned auto_increment primary key,
+			event_data text null,
+			created_at datetime not null
+		) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci; made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, Elementor\Plugin->init, Elementor\Plugin->init_components, Elementor\Core\Admin\Admin->__construct, Elementor\Plugin->init_common, Elementor\Core\Common\App->init_components, Elementor\Core\Common\Modules\EventTracker\Module->__construct, Elementor\Core\Common\Modules\EventTracker\DB->__construct, Elementor\Core\Common\Modules\EventTracker\DB->create_table
+[20-Dec-2025 06:44:43 UTC] WordPress database error Duplicate key name 'created_at_index' for query ALTER TABLE wp_e_events
+    		ADD INDEX `created_at_index` (`created_at`)
+		 made by require_once('wp-admin/admin.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, Elementor\Plugin->init, Elementor\Plugin->init_components, Elementor\Core\Admin\Admin->__construct, Elementor\Plugin->init_common, Elementor\Core\Common\App->init_components, Elementor\Core\Common\Modules\EventTracker\Module->__construct, Elementor\Core\Common\Modules\EventTracker\DB->__construct, Elementor\Core\Common\Modules\EventTracker\DB->add_indexes
+[20-Dec-2025 13:35:22 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\woocommerce\src\Blocks\BlockTypes\AbstractBlock.php on line 66
+[20-Dec-2025 13:35:48 UTC] Automatic updates starting...
+[20-Dec-2025 13:35:49 UTC]   Automatic plugin updates starting...
+[20-Dec-2025 13:35:49 UTC]   Automatic plugin updates complete.
+[20-Dec-2025 13:35:50 UTC]   Automatic theme updates starting...
+[20-Dec-2025 13:35:51 UTC]   Automatic theme updates complete.
+[20-Dec-2025 13:35:51 UTC] Automatic updates complete.
+[20-Dec-2025 13:43:25 UTC] PHP Warning:  Undefined array key "tm_taskmeta" in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimize-database-information.php on line 530
+[20-Dec-2025 13:43:25 UTC] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimize-database-information.php:530
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimize-database-information.php(530): in_array('wp-optimize', NULL)
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimize-database-information.php(549): WP_Optimize_Database_Information->get_all_plugin_tables_relationship()
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimize-database-information.php(437): WP_Optimize_Database_Information->get_table_plugin('actionscheduler...')
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimizer.php(418): WP_Optimize_Database_Information->is_table_using_by_plugin('wp_actionschedu...')
+#4 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimizer.php(365): WP_Optimizer->join_plugin_information('wp_actionschedu...', Object(stdClass))
+#5 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimizer.php(462): WP_Optimizer->get_tables()
+#6 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\optimizations\optimizetables.php(138): WP_Optimizer->get_table_information(1)
+#7 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimizer.php(261): WP_Optimization_optimizetables->get_info()
+#8 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimization.php(234): WP_Optimizer->get_optimization_info(Object(WP_Optimization_optimizetables))
+#9 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimization.php(462): WP_Optimization->get_optimization_info()
+#10 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimize-commands.php(1422): WP_Optimization->get_settings_html()
+#11 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimize-commands.php(1300): WP_Optimize_Commands->get_wp_optimize_data(Array)
+#12 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimize-admin.php(516): WP_Optimize_Commands->get_widgets_data(Array)
+#13 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(324): WP_Optimize_Admin->output_database_optimize_tab('')
+#14 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#15 C:\xampp\htdocs\clothing-ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#16 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimize-admin.php(171): do_action('wp_optimize_adm...')
+#17 C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimize-admin.php(120): WP_Optimize_Admin->display_admin_page('WP-Optimize')
+#18 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(324): WP_Optimize_Admin->display_admin('')
+#19 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#20 C:\xampp\htdocs\clothing-ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#21 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin.php(260): do_action('wp-optimize_pag...')
+#22 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\wp-optimize\includes\class-wp-optimize-database-information.php on line 530
+[21-Dec-2025 09:21:07 UTC] Automatic updates starting...
+[21-Dec-2025 09:21:08 UTC]   Automatic plugin updates starting...
+[21-Dec-2025 09:21:08 UTC]   Automatic plugin updates complete.
+[21-Dec-2025 09:21:09 UTC]   Automatic theme updates starting...
+[21-Dec-2025 09:21:09 UTC]   Automatic theme updates complete.
+[21-Dec-2025 09:21:09 UTC] Automatic updates complete.
+[21-Dec-2025 09:26:45 UTC] Automatic updates starting...
+[21-Dec-2025 09:26:45 UTC]   Automatic plugin updates starting...
+[21-Dec-2025 09:26:45 UTC]   Automatic plugin updates complete.
+[21-Dec-2025 09:26:45 UTC]   Automatic theme updates starting...
+[21-Dec-2025 09:26:45 UTC]   Automatic theme updates complete.
+[21-Dec-2025 09:26:45 UTC] Automatic updates complete.
+[22-Dec-2025 04:12:25 UTC] PHP Warning:  wp_version_check(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[22-Dec-2025 04:12:26 UTC] PHP Warning:  wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[22-Dec-2025 04:12:26 UTC] PHP Warning:  wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[23-Dec-2025 13:25:15 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\woocommerce\src\Blocks\BlockTypes\ProductFilterPrice.php on line 14
+[23-Dec-2025 13:26:06 UTC] Automatic updates starting...
+[23-Dec-2025 13:26:07 UTC]   Automatic plugin updates starting...
+[23-Dec-2025 13:26:07 UTC]   Automatic plugin updates complete.
+[23-Dec-2025 13:26:10 UTC]   Automatic theme updates starting...
+[23-Dec-2025 13:26:10 UTC]   Automatic theme updates complete.
+[23-Dec-2025 13:26:10 UTC] Automatic updates complete.
+[23-Dec-2025 13:33:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php:351
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php on line 351
+[23-Dec-2025 13:33:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php:351
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php on line 351
+[23-Dec-2025 13:34:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php:351
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php on line 351
+[23-Dec-2025 13:34:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php:351
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php on line 351
+[23-Dec-2025 13:34:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php:351
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php on line 351
+[23-Dec-2025 13:34:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php:351
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php on line 351
+[23-Dec-2025 13:34:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php:351
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php on line 351
+[23-Dec-2025 13:34:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php:351
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\clothing-ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\clothing-ecommerce\wp-admin\admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\elementor\modules\ai\module.php on line 351
+[23-Dec-2025 14:08:37 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\woocommerce\includes\admin\class-wc-admin-duplicate-product.php on line 12
+[23-Dec-2025 14:08:50 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\woocommerce\src\Blocks\BlockTypes\ProductFilterPriceSlider.php on line 15
+[23-Dec-2025 14:08:53 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\woocommerce\src\Blocks\BlockTypes\AbstractBlock.php on line 66
+[23-Dec-2025 14:09:01 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\woocommerce\src\Blocks\BlockTypes\AbstractBlock.php on line 66
+[23-Dec-2025 14:09:04 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-includes\Requests\src\Transport\Curl.php on line 205
+[23-Dec-2025 14:09:20 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-admin\includes\template.php on line 12
+[23-Dec-2025 14:35:28 UTC] PHP Warning:  wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\xampp\htdocs\clothing-ecommerce\wp-includes\functions.php on line 6121
+[24-Dec-2025 04:47:27 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-includes\Requests\src\Transport\Curl.php on line 205
+[24-Dec-2025 04:47:41 UTC] Automatic updates starting...
+[24-Dec-2025 04:47:44 UTC]   Automatic plugin updates starting...
+[24-Dec-2025 04:47:44 UTC]   Automatic plugin updates complete.
+[24-Dec-2025 04:47:45 UTC]   Automatic theme updates starting...
+[24-Dec-2025 04:47:45 UTC]   Automatic theme updates complete.
+[24-Dec-2025 04:47:45 UTC] Automatic updates complete.
+[24-Dec-2025 05:03:56 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\woocommerce\src\Blocks\BlockTypes\Accordion\AccordionItem.php on line 11
+[24-Dec-2025 05:59:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_image_id() on string in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\single-product.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\single-product.php on line 19
+[24-Dec-2025 05:59:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_image_id() on string in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\single-product.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\single-product.php on line 19
+[24-Dec-2025 05:59:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_image_id() on string in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\single-product.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\single-product.php on line 19
+[24-Dec-2025 06:00:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_image_id() on string in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\single-product.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\single-product.php on line 19
+[24-Dec-2025 06:00:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_image_id() on string in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\single-product.php:19
+Stack trace:
+#0 C:\xampp\htdocs\clothing-ecommerce\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\clothing-ecommerce\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\clothing-ecommerce\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\clothing-ecommerce\wp-content\themes\clothing-ecommerce\single-product.php on line 19
+[24-Dec-2025 14:01:29 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\woocommerce\src\Blocks\BlockTypes\AbstractBlock.php on line 66
+[24-Dec-2025 14:01:50 UTC] Automatic updates starting...
+[24-Dec-2025 14:01:51 UTC]   Automatic plugin updates starting...
+[24-Dec-2025 14:01:51 UTC]   Automatic plugin updates complete.
+[24-Dec-2025 14:01:52 UTC]   Automatic theme updates starting...
+[24-Dec-2025 14:01:52 UTC]   Automatic theme updates complete.
+[24-Dec-2025 14:01:52 UTC] Automatic updates complete.
+[24-Dec-2025 15:14:21 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\woocommerce\patterns\featured-category-triple.php on line 8
+[24-Dec-2025 15:14:25 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-content\plugins\woocommerce\patterns\social-follow-us-in-social-media.php on line 8
+[24-Dec-2025 15:14:39 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\clothing-ecommerce\wp-admin\includes\class-wp-privacy-data-export-requests-list-table.php on line 10

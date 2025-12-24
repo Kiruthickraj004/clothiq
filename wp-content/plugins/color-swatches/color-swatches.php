@@ -109,7 +109,6 @@ add_action( 'custom_product_color_swatches', function () {
 
     ?>
     <div class="product-color-swatches">
-        <strong>Color:</strong>
         <div class="swatches">
             <?php foreach ( $swatches as $swatch ) : ?>
                 <a href="<?php echo esc_url( $swatch['url'] ); ?>"

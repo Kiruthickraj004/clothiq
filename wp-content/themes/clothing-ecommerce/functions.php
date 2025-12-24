@@ -5,17 +5,8 @@ add_action( 'after_setup_theme', function () {
 
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
-    add_theme_support( 'html5', [
-'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption'
-    ] );
-
-    register_nav_menus( [
-        'primary' => 'Primary Menu'
-    ] );
+    add_theme_support( 'html5', ['search-form','comment-form','comment-list','gallery','caption' ] );
+    register_nav_menus( ['primary' => 'Primary Menu'] );
     add_theme_support( 'woocommerce' );
     add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
@@ -26,83 +17,23 @@ add_action( 'after_setup_theme', function () {
 });
 add_action( 'wp_enqueue_scripts', function () {
     $ver = wp_get_theme()->get( 'Version' ) ?: time();
-    wp_enqueue_style(
-        'essence-core',
-        get_template_directory_uri() . '/assets/css/core-style.css',
-        [],
-        $ver
-    );
-    wp_enqueue_style(
-        'owl-carousel',
-        get_template_directory_uri() . '/assets/css/owl.carousel.min.css',
-        [ 'essence-core' ],
-        '2.3.4'
-    );
-    wp_enqueue_style(
-        'owl-theme',
-        get_template_directory_uri() . '/assets/css/owl.theme.default.min.css',
-        [ 'owl-carousel' ],
-        '2.3.4'
-    );
-    wp_enqueue_style(
-        'essence-style',
-        get_template_directory_uri() . '/assets/css/style.css',
-        [ 'essence-core', 'owl-carousel' ],
-        $ver
-    );
-    wp_enqueue_style(
-        'theme-root-style',
-        get_stylesheet_uri(),
-        [ 'essence-style' ],
-        $ver
-    );
-    wp_enqueue_script(
-        'popper',
-        get_template_directory_uri() . '/assets/js/popper.min.js',
-        [],
-        '2.11.0',
-        true
-    );
-    wp_enqueue_script(
-        'bootstrap-js',
-        get_template_directory_uri() . '/assets/js/bootstrap.min.js',
-        [ 'jquery', 'popper' ],
-        '5.3.0',
-        true
-    );
-    wp_enqueue_script(
-        'essence-plugins',
-        get_template_directory_uri() . '/assets/js/plugins.js',
-        [ 'jquery' ],
-        $ver,
-        true
-    );
-    wp_enqueue_script(
-        'classy-nav',
-        get_template_directory_uri() . '/assets/js/classy-nav.min.js',
-        [ 'jquery' ],
-        $ver,
-        true
-    );
-    wp_enqueue_script(
-        'owl-carousel',
-        get_template_directory_uri() . '/assets/js/owl.carousel.min.js',
-        [ 'jquery' ],
-        '2.3.4',
-        true
-    );
-    wp_enqueue_script(
-        'theme-js',
-        get_template_directory_uri() . '/assets/js/active.js',
-        [ 'jquery', 'essence-plugins', 'owl-carousel', 'classy-nav', 'bootstrap-js' ],
-        $ver,
-        true
-    );
-    wp_localize_script( 'theme-js', 'themeVars', [
-        'ajax_url' => admin_url( 'admin-ajax.php' ),
-        'site_url' => home_url( '/' ),
-        'theme_dir'=> get_template_directory_uri(),
-    ] );
+    wp_enqueue_style('essence-core',get_template_directory_uri() . '/assets/css/core-style.css',[], $ver);
+    wp_enqueue_style('owl-carousel',get_template_directory_uri() . '/assets/css/owl.carousel.min.css',[ 'essence-core' ],'2.3.4');
+    wp_enqueue_style('owl-theme',get_template_directory_uri() . '/assets/css/owl.theme.default.min.css',[ 'owl-carousel' ],'2.3.4');
+    wp_enqueue_style('essence-style',get_template_directory_uri() . '/assets/css/style.css',[ 'essence-core', 'owl-carousel' ],$ver);
+    wp_enqueue_style('theme-root-style',get_stylesheet_uri(),[ 'essence-style' ],$ver);
+    wp_enqueue_script('popper',get_template_directory_uri() . '/assets/js/popper.min.js',[],'2.11.0',true);
+    wp_enqueue_script('bootstrap-js',get_template_directory_uri() . '/assets/js/bootstrap.min.js',[ 'jquery', 'popper' ],'5.3.0',true);
+    wp_enqueue_script('essence-plugins',get_template_directory_uri() . '/assets/js/plugins.js',[ 'jquery' ],$ver,true);
+    wp_enqueue_script('classy-nav',get_template_directory_uri() . '/assets/js/classy-nav.min.js',[ 'jquery' ],$ver,true);
+    wp_enqueue_script('owl-carousel',get_template_directory_uri() . '/assets/js/owl.carousel.min.js',[ 'jquery' ],'2.3.4',true);
+    wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/assets/js/active.js',[ 'jquery', 'essence-plugins', 'owl-carousel', 'classy-nav', 'bootstrap-js' ],$ver, true);
+    wp_localize_script( 'theme-js', 'themeVars', ['ajax_url' => admin_url( 'admin-ajax.php' ),'site_url' => home_url( '/' ),'theme_dir'=> get_template_directory_uri(),] );
+});
+add_action('wp_enqueue_scripts', function(){
+    if ( is_product() ) {
+        wp_enqueue_script('product-gallery', get_template_directory_uri() . '/assets/js/product-gallery.js', array(),'1.0', true);
+    }
 });
 
 add_action( 'widgets_init', function () {
@@ -130,7 +61,6 @@ add_action( 'wp_enqueue_scripts', function () {
     if ( ! function_exists( 'is_woocommerce' ) ) {
         return;
     }
-
     if (
         is_shop() ||
         is_product_taxonomy() ||
@@ -141,7 +71,6 @@ add_action( 'wp_enqueue_scripts', function () {
         wp_enqueue_style( 'woocommerce-layout' );
         wp_enqueue_style( 'woocommerce-smallscreen' );
         wp_enqueue_style( 'woocommerce-general' );
-
         if ( wp_script_is( 'wc-price-slider', 'registered' ) ) {
             wp_enqueue_script( 'wc-price-slider' );
         } else {
@@ -151,6 +80,7 @@ add_action( 'wp_enqueue_scripts', function () {
     }
 }, 20 );
 require_once get_template_directory() . '/inc/cart-modal.php';
+
 add_action( 'template_redirect', function () {
 
     if ( ! isset( $_GET['buy_now'] ) ) {
@@ -171,3 +101,13 @@ add_action( 'template_redirect', function () {
     wp_safe_redirect( wc_get_checkout_url() );
     exit;
 });
+
+add_action( 'wp_enqueue_scripts', function () {
+
+    if ( is_page_template( 'page-contact.php' ) ) {
+
+        wp_enqueue_script('google-maps','https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY',[],null,true);
+        wp_enqueue_script('map-active',get_template_directory_uri() . '/assets/js/map-active.js',['jquery', 'google-maps'],'1.0',true);
+    }
+});
+
