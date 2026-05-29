@@ -48,13 +48,16 @@ add_action( 'widgets_init', function () {
     ] );
 });
 
-add_action( 'woocommerce_before_main_content', function () {
+function clothing_ecommerce_wc_wrapper_start() {
     echo '<main id="content" class="container py-4">';
-}, 10 );
+}
 
-add_action( 'woocommerce_after_main_content', function () {
+function clothing_ecommerce_wc_wrapper_end() {
     echo '</main>';
-}, 10 );
+}
+
+add_action( 'woocommerce_before_main_content', 'clothing_ecommerce_wc_wrapper_start', 10 );
+add_action( 'woocommerce_after_main_content', 'clothing_ecommerce_wc_wrapper_end', 10 );
 
 add_action( 'wp_enqueue_scripts', function () {
 

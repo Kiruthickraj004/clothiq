@@ -129,6 +129,23 @@ add_action( 'woocommerce_admin_process_product_object', function ( $product ) {
 });
 
 /* =========================================
+ * SAVE SIZES
+ * ========================================= */
+add_action( 'woocommerce_admin_process_product_object', function ( $product ) {
+
+    if ( isset( $_POST['_custom_sizes'] ) && is_array( $_POST['_custom_sizes'] ) ) {
+
+        $clean_sizes = array_map( 'sanitize_text_field', $_POST['_custom_sizes'] );
+
+        $product->update_meta_data( '_custom_sizes', $clean_sizes );
+
+    } else {
+
+        // If nothing selected, save empty array
+        $product->update_meta_data( '_custom_sizes', [] );
+    }
+});
+/* =========================================
  * ADMIN ASSETS
  * ========================================= */
 add_action( 'admin_enqueue_scripts', function ( $hook ) {

@@ -2,6 +2,23 @@
 defined( 'ABSPATH' ) || exit;
 get_header();
 
+if ( clothiq_elementor_theme_do_location( 'single' ) ) {
+    get_footer();
+    return;
+}
+
+$clothiq_product_id = get_queried_object_id();
+if ( $clothiq_product_id && clothiq_is_elementor_built( $clothiq_product_id ) ) {
+    echo '<div class="clothiq-elementor-content clothiq-product-elementor">';
+    while ( have_posts() ) {
+        the_post();
+        the_content();
+    }
+    echo '</div>';
+    get_footer();
+    return;
+}
+
 /* Disable default WooCommerce layout */
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
@@ -45,8 +62,8 @@ if ( taxonomy_exists( 'pa_brand' ) ) {
 
 /* Get product category */
 $product_categories = wp_get_post_terms( $product->get_id(), 'product_cat' );
-$category_id = ! empty( $product_categories ) && ! is_wp_error( $product_categories ) 
-    ? $product_categories[0]->term_id 
+$category_id = ! empty( $product_categories ) && ! is_wp_error( $product_categories )
+    ? $product_categories[0]->term_id
     : 0;
 
 /* Get available sizes and colors from category */
@@ -63,6 +80,7 @@ $available_colors = $category_id ? get_category_available_colors( $category_id, 
 /* Get current product colors */
 $product_colors = $product->get_meta( '_custom_colors' );
 $default_color = ! empty( $product_colors ) ? $product_colors[0] : [];
+$current_product_id = $product->get_id();
 ?>
 
 <div class="single-product-page">
@@ -73,7 +91,7 @@ $default_color = ! empty( $product_colors ) ? $product_colors[0] : [];
             <div class="product-gallery-section">
                 <div class="product-gallery-wrapper">
                     <button class="gallery-nav prev-slide">&lt;</button>
-                    
+
                     <div class="main-gallery">
                         <div class="gallery-slides">
                             <?php foreach ( $slides as $idx => $img ): ?>
@@ -118,47 +136,52 @@ $default_color = ! empty( $product_colors ) ? $product_colors[0] : [];
 
                 <!-- Size & Color Options -->
                 <div class="product-selectors">
-                    
+
                     <?php if ( ! empty( $available_sizes ) ): ?>
-                        <div class="selector-group">
+                        <div class="selector-group selector-group--size">
                             <label>SIZE: <span class="size-value"><?php echo esc_html( isset( $size_labels[ $default_size ] ) ? $size_labels[ $default_size ] : strtoupper( $default_size ) ); ?></span></label>
-                            <select name="product_size" class="size-select" data-product-id="<?php echo $product->get_id(); ?>" required>
-                                <option value="">Select Size</option>
-                                <?php foreach ( $available_sizes as $size ): ?>
-                                    <option value="<?php echo esc_attr( $size ); ?>" <?php selected( $size, $default_size ); ?>>
-                                        <?php echo esc_html( $size_labels[ $size ] ?? strtoupper( $size ) ); ?>
-                                    </option>
+                            <div class="size-options" role="group" aria-label="<?php esc_attr_e( 'Select size', 'clothing-ecommerce-child' ); ?>">
+                                <?php foreach ( $available_sizes as $size ):
+                                    $size_label = $size_labels[ $size ] ?? strtoupper( $size );
+                                    $is_active  = $size === $default_size;
+                                    ?>
+                                    <button type="button"
+                                            class="size-option<?php echo $is_active ? ' is-active' : ''; ?>"
+                                            data-size="<?php echo esc_attr( $size ); ?>"
+                                            data-size-label="<?php echo esc_attr( $size_label ); ?>"
+                                            aria-pressed="<?php echo $is_active ? 'true' : 'false'; ?>">
+                                        <?php echo esc_html( $size_label ); ?>
+                                    </button>
                                 <?php endforeach; ?>
-                            </select>
+                            </div>
+                            <input type="hidden"
+                                   name="product_size"
+                                   class="size-select"
+                                   value="<?php echo esc_attr( $default_size ); ?>"
+                                   data-product-id="<?php echo esc_attr( $product->get_id() ); ?>">
                         </div>
                     <?php endif; ?>
 
                     <?php if ( ! empty( $available_colors ) ): ?>
                         <div class="selector-group">
                             <label>COLOR: <span class="color-value"><?php echo esc_html( strtoupper( $default_color['name'] ?? 'SELECT' ) ); ?></span></label>
-                            <select name="product_color" class="color-select" data-product-id="<?php echo $product->get_id(); ?>" data-size="<?php echo esc_attr( $default_size ); ?>">
-                                <option value="">Select Color</option>
-                                <?php foreach ( $available_colors as $color ): ?>
-                                    <option value="<?php echo esc_attr( $color['hex'] ); ?>" data-color-name="<?php echo esc_attr( $color['name'] ); ?>" 
-                                        <?php selected( $color['hex'], $default_color['hex'] ?? '' ); ?>>
-                                        <?php echo esc_html( $color['name'] ); ?>
-                                    </option>
+
+                            <div class="color-swatches-inline">
+                                <?php foreach ( $available_colors as $color ):
+                                    $is_active = ( isset( $color['product_id'] ) && (int) $color['product_id'] === $current_product_id )
+                                        || ( isset( $default_color['hex'] ) && $default_color['hex'] === $color['hex'] );
+                                    $swatch_url = ! empty( $color['url'] ) ? $color['url'] : '#';
+                                    ?>
+                                    <a href="<?php echo esc_url( $swatch_url ); ?>"
+                                       class="color-swatch<?php echo $is_active ? ' active' : ''; ?>"
+                                       style="background-color: <?php echo esc_attr( $color['hex'] ); ?>"
+                                       data-color-hex="<?php echo esc_attr( $color['hex'] ); ?>"
+                                       data-color-name="<?php echo esc_attr( $color['name'] ); ?>"
+                                       title="<?php echo esc_attr( $color['name'] ); ?>"
+                                       <?php echo $is_active ? 'aria-current="true"' : ''; ?>>
+                                    </a>
                                 <?php endforeach; ?>
-                            </select>
-                            
-                            <?php if ( ! empty( $available_colors ) ): ?>
-                                <div class="color-swatches-inline">
-                                    <?php foreach ( $available_colors as $color ): ?>
-                                        <button type="button" class="color-swatch" 
-                                            style="background-color: <?php echo esc_attr( $color['hex'] ); ?>"
-                                            data-color-hex="<?php echo esc_attr( $color['hex'] ); ?>"
-                                            data-color-name="<?php echo esc_attr( $color['name'] ); ?>"
-                                            title="<?php echo esc_attr( $color['name'] ); ?>"
-                                            <?php echo isset( $default_color['hex'] ) && $default_color['hex'] === $color['hex'] ? 'data-active="true"' : ''; ?>>
-                                        </button>
-                                    <?php endforeach; ?>
-                                </div>
-                            <?php endif; ?>
+                            </div>
                         </div>
                     <?php endif; ?>
 
@@ -167,7 +190,7 @@ $default_color = ! empty( $product_colors ) ? $product_colors[0] : [];
                 <!-- Add to Cart -->
                 <form method="post" class="add-to-cart-form">
                     <div class="product-actions-wrapper">
-                        
+
                         <?php if ( $product->is_purchasable() && $product->is_in_stock() ): ?>
                             <button type="submit"
                                     name="add-to-cart"
@@ -175,8 +198,10 @@ $default_color = ! empty( $product_colors ) ? $product_colors[0] : [];
                                     class="btn-add-to-cart">
                                 ADD TO CART
                             </button>
-                            <button type="button" class="btn-wishlist" title="Add to Wishlist">
-                                <i class="far fa-heart"></i>
+                            <button type="button" class="btn-wishlist" title="Add to Wishlist" aria-label="Add to Wishlist">
+                                <svg class="wishlist-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
                             </button>
                         <?php else: ?>
                             <p class="out-of-stock">Out of stock</p>

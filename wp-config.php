@@ -20,7 +20,7 @@ define('WP_CACHE', true); // WP-Optimize Cache
  */
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'clothing-ecommerce' );
+define( 'DB_NAME', 'clothiq' );
 /** Database username */
 define( 'DB_USER', 'root' );
 /** Database password */

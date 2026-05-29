@@ -1,0 +1,417 @@
+/* My Account page */
+body.clothiq-account-page main#content.container {
+    max-width: 1200px;
+    padding-top: 28px;
+    padding-bottom: 0;
+}
+
+body.clothiq-account-page .woocommerce {
+    margin: 0;
+}
+
+body.clothiq-account-page .woocommerce-MyAccount-navigation,
+body.clothiq-account-page .woocommerce-MyAccount-content {
+    float: none !important;
+    width: auto !important;
+}
+
+.clothiq-account {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+}
+
+.clothiq-account__hero {
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.clothiq-account__eyebrow {
+    margin: 0 0 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.clothiq-account__title {
+    margin: 0 0 10px;
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000;
+}
+
+.clothiq-account__subtitle {
+    margin: 0;
+    max-width: 560px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.clothiq-account__layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.clothiq-account__sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.clothiq-account__main {
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    padding: 32px;
+    min-height: 320px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* Sidebar navigation */
+.clothiq-account-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.clothiq-account-nav li {
+    margin: 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.clothiq-account-nav li:last-child {
+    border-bottom: none;
+}
+
+.clothiq-account-nav li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.clothiq-account-nav li a:hover {
+    background: #f7f7f7;
+    color: #000;
+}
+
+.clothiq-account-nav li.is-active a {
+    background: #000;
+    color: #fff;
+}
+
+.clothiq-account-nav__icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.clothiq-account-nav__icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+}
+
+.clothiq-account-nav li.woocommerce-MyAccount-navigation-link--customer-logout a {
+    color: #666;
+}
+
+.clothiq-account-nav li.woocommerce-MyAccount-navigation-link--customer-logout a:hover {
+    color: #000;
+}
+
+/* Dashboard */
+.clothiq-dashboard__panel {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.clothiq-dashboard__greeting {
+    margin: 0 0 10px;
+    font-size: 15px;
+    color: #333;
+}
+
+.clothiq-dashboard__intro {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.clothiq-dashboard__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.clothiq-account-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 22px 20px;
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    background: #fafafa;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.clothiq-account-card:hover {
+    border-color: #000;
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+.clothiq-account-card__icon {
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+    color: #000;
+}
+
+.clothiq-account-card__icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    fill: none;
+}
+
+.clothiq-account-card__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.clothiq-account-card__desc {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666;
+    padding-right: 24px;
+}
+
+.clothiq-account-card__arrow {
+    position: absolute;
+    right: 18px;
+    top: 22px;
+    font-size: 18px;
+    color: #000;
+}
+
+/* WooCommerce tables & forms inside account */
+.clothiq-account__main .woocommerce-orders-table,
+.clothiq-account__main .shop_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.clothiq-account__main .woocommerce-orders-table th,
+.clothiq-account__main .woocommerce-orders-table td,
+.clothiq-account__main .shop_table th,
+.clothiq-account__main .shop_table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #ebebeb;
+    text-align: left;
+}
+
+.clothiq-account__main .woocommerce-orders-table thead th,
+.clothiq-account__main .shop_table thead th {
+    background: #fafafa;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.clothiq-account__main .woocommerce-orders-table a,
+.clothiq-account__main .shop_table a {
+    color: #000;
+    font-weight: 600;
+}
+
+.clothiq-account__main .woocommerce-form-row label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+}
+
+.clothiq-account__main .woocommerce-Input,
+.clothiq-account__main input.input-text,
+.clothiq-account__main select,
+.clothiq-account__main textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+.clothiq-account__main .woocommerce-Input:focus,
+.clothiq-account__main input.input-text:focus,
+.clothiq-account__main select:focus,
+.clothiq-account__main textarea:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.clothiq-account__main .form-row {
+    margin-bottom: 18px;
+}
+
+.clothiq-account__main .woocommerce-address-fields__field-wrapper,
+.clothiq-account__main .woocommerce-EditAccountForm {
+    display: grid;
+    gap: 0 20px;
+}
+
+.clothiq-account__main .woocommerce-EditAccountForm .form-row-first,
+.clothiq-account__main .woocommerce-EditAccountForm .form-row-last {
+    display: inline-block;
+    width: calc(50% - 10px);
+    vertical-align: top;
+}
+
+.clothiq-account__main .woocommerce-EditAccountForm .form-row-first {
+    margin-right: 16px;
+}
+
+.clothiq-account__main .woocommerce-Message,
+.clothiq-account__main .woocommerce-info,
+.clothiq-account__main .woocommerce-error {
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    list-style: none;
+}
+
+.clothiq-account__main .woocommerce-Message {
+    background: #f5f5f5;
+    border-left: 3px solid #000;
+}
+
+.clothiq-account__main .woocommerce-info {
+    background: #f9f9f9;
+    border: 1px solid #ebebeb;
+}
+
+.clothiq-account__main .woocommerce-error {
+    background: #fff5f5;
+    border-left: 3px solid #c00;
+}
+
+.clothiq-account__main .woocommerce-Button,
+.clothiq-account__main button.button,
+.clothiq-account__main a.button {
+    background: #000 !important;
+    color: #fff !important;
+    border: 2px solid #000 !important;
+    border-radius: 4px !important;
+    padding: 12px 28px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+.clothiq-account__main .woocommerce-Button:hover,
+.clothiq-account__main button.button:hover,
+.clothiq-account__main a.button:hover {
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #000 !important;
+}
+
+.clothiq-account__main address {
+    padding: 18px;
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    font-style: normal;
+    line-height: 1.7;
+    background: #fafafa;
+}
+
+.clothiq-account__main .woocommerce-Address-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.clothiq-account__main .woocommerce-Address-title h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .clothiq-account__layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .clothiq-account__sidebar {
+        position: static;
+    }
+
+    .clothiq-account-nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .clothiq-account-nav li {
+        border-bottom: 1px solid #ebebeb;
+    }
+
+    .clothiq-dashboard__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 575px) {
+    .clothiq-account {
+        padding: 24px 16px 60px;
+    }
+
+    .clothiq-account__main {
+        padding: 22px 18px;
+    }
+
+    .clothiq-account-nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    .clothiq-account__main .woocommerce-EditAccountForm .form-row-first,
+    .clothiq-account__main .woocommerce-EditAccountForm .form-row-last {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+    }
+}

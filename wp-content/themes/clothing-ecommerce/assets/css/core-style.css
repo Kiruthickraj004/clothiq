@@ -815,13 +815,20 @@ img {
       font-family: "Ubuntu", sans-serif;
       font-weight: 700;
       color: #000000; }
-      .single-product-wrapper .product-description p span {
+      .single-product-wrapper .product-description p del {
         font-size: 14px;
         font-family: "Ubuntu", sans-serif;
         font-weight: 700;
         color: #aaaaaa;
         margin-right: 10px;
         text-decoration: line-through; }
+      .single-product-wrapper .product-description p ins {
+        font-size: 14px;
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 700;
+        color: #000000;
+        margin-right: 10px;
+        text-decoration: none; }
     .single-product-wrapper .product-description .hover-content {
       position: absolute;
       width: calc(100% - 40px);
@@ -1010,13 +1017,21 @@ img {
       @media only screen and (min-width: 768px) and (max-width: 991px) {
         .single_product_details_area .single_product_desc .product-price {
           font-size: 20px; } }
-      .single_product_details_area .single_product_desc .product-price span {
+      .single_product_details_area .single_product_desc .product-price del {
         display: inline-block;
         font-family: "Ubuntu", sans-serif;
         font-size: 24px;
         color: #787878;
         font-weight: 700;
         text-decoration: line-through;
+        margin-right: 15px; }
+      .single_product_details_area .single_product_desc .product-price ins {
+        display: inline-block;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 24px;
+        color: #000000;
+        font-weight: 700;
+        text-decoration: none;
         margin-right: 15px; }
     .single_product_details_area .single_product_desc .product-desc {
       font-size: 16px; }

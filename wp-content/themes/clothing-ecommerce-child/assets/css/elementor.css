@@ -1,0 +1,42 @@
+/* Elementor compatibility */
+body.clothiq-elementor-page .header_area,
+body.clothiq-elementor-shop .header_area {
+    position: relative;
+    top: auto;
+}
+
+body.clothiq-elementor-page,
+body.clothiq-elementor-shop {
+    margin-top: 0;
+}
+
+body.clothiq-elementor-page main#content.container,
+body.clothiq-elementor-page main.site-main,
+body.clothiq-elementor-shop main.site-main,
+body.single-product.clothiq-elementor-page main#content.container,
+body.elementor-template-canvas {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.clothiq-elementor-content,
+.clothiq-elementor-shop-content {
+    width: 100%;
+}
+
+.clothiq-site-main--elementor .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 1140px;
+}
+
+/* Prevent double spacing from theme containers on Elementor pages */
+.clothiq-site-main--elementor .entry-content {
+    margin: 0;
+    padding: 0;
+}
+
+body.elementor-page .elementor-widget-woocommerce-products ul.products {
+    margin: 0;
+    padding: 0;
+}
