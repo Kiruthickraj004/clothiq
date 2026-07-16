@@ -248,7 +248,7 @@ add_filter( 'wc_add_to_cart_message_html', function( $message, $products ) {
 }, 10, 2 );
 
 add_action( 'wp', function() {
-    if ( is_shop() || is_product_taxonomy() || is_post_type_archive( 'product' ) ) {
+    if ( ! is_admin() && ( is_shop() || is_product_taxonomy() || is_post_type_archive( 'product' ) ) ) {
         wc_clear_notices( 'success' );
     }
 }, 20 );

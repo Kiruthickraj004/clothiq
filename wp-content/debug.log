@@ -706,3 +706,31 @@ CREATE TABLE wp_wc_orders_meta (
 [29-May-2026 06:05:23 UTC]   Automatic theme updates complete.
 [29-May-2026 06:05:23 UTC] Automatic updates complete.
 [29-May-2026 13:02:24 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\clothiq\wp-includes\class-wpdb.php on line 1988
+[16-Jul-2026 05:45:07 UTC] Automatic updates starting...
+[16-Jul-2026 05:45:08 UTC]   Automatic plugin updates starting...
+[16-Jul-2026 05:45:08 UTC]   Automatic plugin updates complete.
+[16-Jul-2026 05:45:09 UTC]   Automatic theme updates starting...
+[16-Jul-2026 05:45:09 UTC]   Automatic theme updates complete.
+[16-Jul-2026 05:45:09 UTC] Automatic updates complete.
+[16-Jul-2026 05:45:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wc_clear_notices() in C:\xampp\htdocs\clothiq\wp-content\themes\clothing-ecommerce-child\functions.php:252
+Stack trace:
+#0 C:\xampp\htdocs\clothiq\wp-includes\class-wp-hook.php(324): {closure}(Object(WP))
+#1 C:\xampp\htdocs\clothiq\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\clothiq\wp-includes\plugin.php(565): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\clothiq\wp-includes\class-wp.php(835): do_action_ref_array('wp', Array)
+#4 C:\xampp\htdocs\clothiq\wp-includes\functions.php(1342): WP->main(Array)
+#5 C:\xampp\htdocs\clothiq\wp-admin\includes\post.php(1312): wp(Array)
+#6 C:\xampp\htdocs\clothiq\wp-admin\includes\class-wp-posts-list-table.php(165): wp_edit_posts_query()
+#7 C:\xampp\htdocs\clothiq\wp-admin\edit.php(235): WP_Posts_List_Table->prepare_items()
+#8 {main}
+  thrown in C:\xampp\htdocs\clothiq\wp-content\themes\clothing-ecommerce-child\functions.php on line 252
+[16-Jul-2026 05:45:49 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\clothiq\wp-includes\class-wp-recovery-mode-email-service.php on line 367
+[16-Jul-2026 05:45:49 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\clothiq\wp-includes\class-wp-recovery-mode-email-service.php on line 368
+[16-Jul-2026 05:46:02 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in C:\xampp\htdocs\clothiq\wp-content\plugins\elementor\modules\ai\module.php:351
+Stack trace:
+#0 C:\xampp\htdocs\clothiq\wp-includes\class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 C:\xampp\htdocs\clothiq\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\clothiq\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\clothiq\wp-admin\admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in C:\xampp\htdocs\clothiq\wp-content\plugins\elementor\modules\ai\module.php on line 351

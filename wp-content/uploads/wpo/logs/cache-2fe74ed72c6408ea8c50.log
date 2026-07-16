@@ -250,3 +250,38 @@
 [2026-05-29 07:51:59 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
 [2026-05-29 07:51:59 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
 [2026-05-29 08:11:00 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2026-07-16 06:02:29 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-07-16 06:02:29 : INFO] - Cache for URL: http://localhost/clothiq/?product=white-t-shirt has been purged, triggered by action: save_post 
+[2026-07-16 06:02:29 : INFO] - Cache for archive page associated with post_type: product and Title: "White T-shirt" has been purged, triggered by action: save_post 
+[2026-07-16 06:02:35 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-07-16 06:02:36 : INFO] - Cache for URL: http://localhost/clothiq/?product=green-t-shirt has been purged, triggered by action: save_post 
+[2026-07-16 06:02:36 : INFO] - Cache for archive page associated with post_type: product and Title: "Green T-shirt" has been purged, triggered by action: save_post 
+[2026-07-16 06:02:36 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-07-16 06:02:37 : INFO] - Cache for URL: http://localhost/clothiq/?product=blue-t-shirt has been purged, triggered by action: save_post 
+[2026-07-16 06:02:37 : INFO] - Cache for archive page associated with post_type: product and Title: "Blue T-shirt" has been purged, triggered by action: save_post 
+[2026-07-16 06:02:40 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-07-16 06:02:40 : INFO] - Cache for URL: http://localhost/clothiq/?product=pink-t-shirt has been purged, triggered by action: save_post 
+[2026-07-16 06:02:40 : INFO] - Cache for archive page associated with post_type: product and Title: "Pink T-shirt" has been purged, triggered by action: save_post 
+[2026-07-16 06:02:45 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-07-16 06:02:46 : INFO] - Cache for URL: http://localhost/clothiq/?product=red-t-shirt has been purged, triggered by action: save_post 
+[2026-07-16 06:02:46 : INFO] - Cache for archive page associated with post_type: product and Title: "Red T-shirt" has been purged, triggered by action: save_post 
+[2026-07-16 06:02:46 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-07-16 06:02:47 : INFO] - Cache for URL: http://localhost/clothiq/?product=brown-t-shirt has been purged, triggered by action: save_post 
+[2026-07-16 06:02:47 : INFO] - Cache for archive page associated with post_type: product and Title: "Brown T-shirt" has been purged, triggered by action: save_post 
+[2026-07-16 06:02:52 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-07-16 06:02:52 : INFO] - Cache for URL: http://localhost/clothiq/?product=yellow-t-shirt has been purged, triggered by action: save_post 
+[2026-07-16 06:02:52 : INFO] - Cache for archive page associated with post_type: product and Title: "Yellow T-shirt" has been purged, triggered by action: save_post 
+[2026-07-16 06:02:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-07-16 06:02:58 : INFO] - Cache for URL: http://localhost/clothiq/?product=black-t-shirt has been purged, triggered by action: save_post 
+[2026-07-16 06:02:58 : INFO] - Cache for archive page associated with post_type: product and Title: "Black T-shirt" has been purged, triggered by action: save_post 
+[2026-07-16 06:02:58 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-07-16 06:02:59 : INFO] - Cache for URL: http://localhost/clothiq/?product=orange-t-shirt has been purged, triggered by action: save_post 
+[2026-07-16 06:02:59 : INFO] - Cache for archive page associated with post_type: product and Title: "Orange T-shirt" has been purged, triggered by action: save_post 
+[2026-07-16 06:03:02 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2026-07-16 06:03:03 : INFO] - Cache for URL: http://localhost/clothiq/?product=grey-t-shirt has been purged, triggered by action: save_post 
+[2026-07-16 06:03:03 : INFO] - Cache for archive page associated with post_type: product and Title: "Grey T-shirt" has been purged, triggered by action: save_post 
+[2026-07-16 06:04:34 : INFO] - Cache for URL: http://localhost/clothiq/?product=grey-t-shirt has been purged, triggered by action: wp_trash_post 
+[2026-07-16 06:04:34 : INFO] - Cache for URL: http://localhost/clothiq/?product=green-t-shirt has been purged, triggered by action: wp_trash_post 
+[2026-07-16 06:04:34 : INFO] - Cache for URL: http://localhost/clothiq/?product=blue-t-shirt has been purged, triggered by action: wp_trash_post 
+[2026-07-16 06:04:34 : INFO] - Cache for URL: http://localhost/clothiq/?product=yellow-t-shirt has been purged, triggered by action: wp_trash_post 
+[2026-07-16 06:04:34 : INFO] - Cache for URL: http://localhost/clothiq/?product=orange-t-shirt has been purged, triggered by action: wp_trash_post 
